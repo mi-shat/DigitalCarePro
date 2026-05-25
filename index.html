@@ -1,0 +1,1819 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Care Pro Bundle | CPD Accredited Training</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --ink: #0a0f1e;
+  --ink-mid: #1a2035;
+  --teal: #00c9a7;
+  --teal-dim: #00a386;
+  --teal-glow: rgba(0,201,167,0.15);
+  --teal-soft: rgba(0,201,167,0.08);
+  --violet: #7c3aed;
+  --violet-soft: rgba(124,58,237,0.12);
+  --gold: #f5c842;
+  --rose: #ff6b8a;
+  --white: #ffffff;
+  --off: #f8faf9;
+  --mist: #e8f2ef;
+  --text: #0a0f1e;
+  --text-mid: #3d5060;
+  --text-soft: #7a9aaa;
+  --border: rgba(0,201,167,0.15);
+  --card: rgba(255,255,255,0.96);
+  --r: 14px;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:'Source Sans 3',sans-serif;
+  background:var(--ink);
+  color:var(--white);
+  overflow-x:hidden;
+}
+
+/* ── NOISE OVERLAY ── */
+body::before{
+  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+  opacity:0.4;
+}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  padding:0 5%;height:68px;
+  display:flex;align-items:center;justify-content:space-between;
+  background:rgba(10,15,30,0.85);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid var(--border);
+}
+.logo{
+  font-family:'Montserrat',sans-serif;
+  font-size:1.15rem;font-weight:700;
+  color:var(--white);letter-spacing:-0.02em;
+}
+.logo span{color:var(--teal);}
+.nav-links{display:flex;gap:1.8rem;list-style:none;}
+.nav-links a{
+  color:rgba(255,255,255,0.5);text-decoration:none;
+  font-size:0.82rem;font-weight:500;letter-spacing:0.03em;
+  transition:color 0.2s;
+}
+.nav-links a:hover{color:var(--teal);}
+.nav-btn{
+  background:var(--teal);color:var(--ink);
+  padding:0.5rem 1.4rem;border-radius:100px;
+  font-weight:700;font-size:0.82rem;letter-spacing:0.02em;
+  text-decoration:none;transition:all 0.2s;
+  box-shadow:0 0 20px rgba(0,201,167,0.3);
+}
+.nav-btn:hover{background:#00e8c0;box-shadow:0 0 30px rgba(0,201,167,0.5);}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;
+  padding:120px 5% 80px;
+  position:relative;overflow:hidden;
+}
+.hero-mesh{
+  position:absolute;inset:0;z-index:0;
+  background:
+    radial-gradient(ellipse 80% 60% at 60% 30%, rgba(0,201,167,0.12) 0%, transparent 60%),
+    radial-gradient(ellipse 50% 40% at 20% 80%, rgba(124,58,237,0.1) 0%, transparent 50%),
+    radial-gradient(ellipse 30% 30% at 85% 70%, rgba(245,200,66,0.06) 0%, transparent 50%);
+}
+.hero-rings{
+  position:absolute;right:-200px;top:50%;transform:translateY(-50%);
+  width:700px;height:700px;z-index:0;
+}
+.ring{
+  position:absolute;border-radius:50%;border:1px solid rgba(0,201,167,0.1);
+  top:50%;left:50%;transform:translate(-50%,-50%);
+  animation:spin 20s linear infinite;
+}
+.ring:nth-child(1){width:300px;height:300px;border-color:rgba(0,201,167,0.2);}
+.ring:nth-child(2){width:450px;height:450px;animation-duration:30s;animation-direction:reverse;}
+.ring:nth-child(3){width:600px;height:600px;animation-duration:40s;}
+.ring:nth-child(4){width:750px;height:750px;animation-duration:50s;animation-direction:reverse;border-color:rgba(124,58,237,0.08);}
+@keyframes spin{from{transform:translate(-50%,-50%) rotate(0deg);}to{transform:translate(-50%,-50%) rotate(360deg);}}
+
+.hero-content{position:relative;z-index:2;max-width:680px;}
+.hero-pill{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  background:rgba(0,201,167,0.1);
+  border:1px solid rgba(0,201,167,0.25);
+  color:var(--teal);padding:0.4rem 1rem;border-radius:100px;
+  font-size:0.75rem;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+  margin-bottom:2rem;
+  animation:fadeUp 0.6s ease both;
+}
+.pulse{
+  width:6px;height:6px;border-radius:50%;background:var(--teal);
+  animation:pulseAnim 2s infinite;
+}
+@keyframes pulseAnim{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.4;transform:scale(1.6);}}
+.hero h1{
+  font-family:'Montserrat',sans-serif;
+  font-size:clamp(3rem,6vw,5.2rem);
+  font-weight:700;line-height:1.0;
+  letter-spacing:-0.03em;
+  margin-bottom:1.5rem;
+  animation:fadeUp 0.7s 0.1s ease both;
+}
+.hero h1 .teal{color:var(--teal);}
+.hero h1 .dim{color:rgba(255,255,255,0.35);}
+.hero-desc{
+  font-size:1.1rem;color:rgba(255,255,255,0.55);
+  line-height:1.7;max-width:520px;margin-bottom:2.5rem;font-weight:300;
+  animation:fadeUp 0.7s 0.2s ease both;
+}
+.hero-ctas{
+  display:flex;gap:1rem;flex-wrap:wrap;
+  animation:fadeUp 0.7s 0.3s ease both;
+}
+.btn-glow{
+  background:var(--teal);color:var(--ink);
+  padding:0.9rem 2rem;border-radius:100px;
+  font-weight:800;font-size:0.9rem;letter-spacing:0.01em;
+  text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;
+  transition:all 0.25s;
+  box-shadow:0 0 30px rgba(0,201,167,0.35),0 4px 16px rgba(0,0,0,0.3);
+}
+.btn-glow:hover{transform:translateY(-2px);box-shadow:0 0 50px rgba(0,201,167,0.5),0 8px 24px rgba(0,0,0,0.4);}
+.btn-ghost{
+  border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.7);
+  padding:0.9rem 2rem;border-radius:100px;
+  font-weight:500;font-size:0.9rem;
+  text-decoration:none;display:inline-flex;align-items:center;gap:0.5rem;
+  transition:all 0.25s;backdrop-filter:blur(10px);
+}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal);}
+
+.hero-stats{
+  display:flex;gap:3rem;margin-top:4rem;
+  padding-top:2.5rem;border-top:1px solid rgba(255,255,255,0.08);
+  animation:fadeUp 0.7s 0.4s ease both;flex-wrap:wrap;
+}
+.hstat-num{
+  font-family:'Montserrat',sans-serif;
+  font-size:2.2rem;font-weight:700;color:var(--white);line-height:1;
+}
+.hstat-num span{color:var(--teal);}
+.hstat-label{font-size:0.78rem;color:rgba(255,255,255,0.4);margin-top:0.3rem;}
+
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+
+/* ── SCROLLING MARQUEE ── */
+.marquee-wrap{
+  background:var(--teal);padding:0.9rem 0;overflow:hidden;
+  border-top:1px solid rgba(0,0,0,0.1);border-bottom:1px solid rgba(0,0,0,0.1);
+  position:relative;z-index:1;
+}
+.marquee-track{
+  display:flex;gap:0;white-space:nowrap;
+  animation:marquee 25s linear infinite;
+}
+.marquee-item{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.8rem;font-weight:600;color:var(--ink);
+  letter-spacing:0.08em;text-transform:uppercase;
+  padding:0 2rem;
+  display:inline-flex;align-items:center;gap:0.7rem;
+}
+.marquee-item::before{content:'★';font-size:0.6rem;}
+@keyframes marquee{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ── SECTIONS ── */
+.section-light{background:var(--off);color:var(--ink);}
+.section-white{background:var(--white);color:var(--ink);}
+.section-dark{background:var(--ink);color:var(--white);}
+.section-mid{background:var(--ink-mid);color:var(--white);}
+.section{padding:100px 5%;}
+
+.label{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;
+  color:var(--teal);margin-bottom:1rem;
+}
+.label::before{content:'';width:24px;height:2px;background:var(--teal);}
+h2.display{
+  font-family:'Montserrat',sans-serif;
+  font-size:clamp(2rem,4vw,3.4rem);
+  font-weight:700;letter-spacing:-0.025em;line-height:1.1;
+  margin-bottom:1rem;
+}
+.lead{font-size:1.05rem;color:var(--text-mid);line-height:1.75;max-width:520px;font-weight:300;}
+.lead-dark{color:rgba(255,255,255,0.5);}
+
+/* ── BUNDLE HERO ── */
+.bundle-hero-wrap{
+  display:grid;grid-template-columns:1fr 420px;gap:5rem;align-items:center;
+}
+.bundle-pillars{display:flex;flex-direction:column;gap:1.2rem;margin-top:2.5rem;}
+.pillar{
+  display:flex;align-items:flex-start;gap:1.2rem;
+  padding:1.4rem;border-radius:var(--r);
+  background:var(--white);border:1px solid rgba(0,0,0,0.06);
+  transition:all 0.25s;cursor:default;
+}
+.pillar:hover{border-color:var(--teal);box-shadow:0 8px 30px rgba(0,201,167,0.1);}
+.pillar-icon{
+  width:44px;height:44px;flex-shrink:0;border-radius:10px;
+  display:flex;align-items:center;justify-content:center;font-size:1.2rem;
+}
+.pi-teal{background:rgba(0,201,167,0.12);}
+.pi-violet{background:rgba(124,58,237,0.1);}
+.pi-gold{background:rgba(245,200,66,0.12);}
+.pillar-name{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.85rem;font-weight:600;color:var(--text);margin-bottom:0.2rem;
+}
+.pillar-desc{font-size:0.82rem;color:var(--text-mid);line-height:1.5;}
+
+/* Price card */
+.price-card{
+  background:var(--ink);
+  border-radius:20px;padding:40px 36px;
+  border:1px solid rgba(0,201,167,0.2);
+  box-shadow:0 0 60px rgba(0,201,167,0.08),0 24px 60px rgba(0,0,0,0.4);
+  position:sticky;top:90px;
+}
+.pc-badge{
+  display:inline-flex;align-items:center;gap:0.4rem;
+  background:rgba(0,201,167,0.12);border:1px solid rgba(0,201,167,0.25);
+  color:var(--teal);font-size:0.7rem;font-weight:700;
+  padding:0.3rem 0.8rem;border-radius:100px;letter-spacing:0.08em;
+  text-transform:uppercase;margin-bottom:1.5rem;
+}
+.pc-was{font-size:0.82rem;color:rgba(255,255,255,0.3);text-decoration:line-through;}
+.pc-price{
+  font-family:'Montserrat',sans-serif;
+  font-size:4.5rem;font-weight:700;color:var(--white);
+  line-height:1;letter-spacing:-0.03em;margin:0.2rem 0;
+}
+.pc-note{font-size:0.75rem;color:rgba(255,255,255,0.3);margin-bottom:1.2rem;}
+.pc-save{
+  display:inline-block;background:var(--gold);color:var(--ink);
+  font-size:0.75rem;font-weight:800;padding:0.3rem 0.9rem;border-radius:100px;
+  margin-bottom:1.8rem;letter-spacing:0.02em;
+}
+.pc-list{list-style:none;margin-bottom:2rem;}
+.pc-list li{
+  display:flex;align-items:center;gap:0.7rem;
+  color:rgba(255,255,255,0.6);font-size:0.85rem;
+  padding:0.5rem 0;border-bottom:1px solid rgba(255,255,255,0.05);
+}
+.pc-list li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;}
+.pc-btn{
+  display:block;width:100%;text-align:center;
+  background:var(--teal);color:var(--ink);
+  padding:1.1rem;border-radius:100px;
+  font-weight:800;font-size:0.95rem;text-decoration:none;
+  transition:all 0.25s;
+  box-shadow:0 0 30px rgba(0,201,167,0.3);
+}
+.pc-btn:hover{background:#00e8c0;box-shadow:0 0 50px rgba(0,201,167,0.5);transform:translateY(-2px);}
+
+/* ── COURSES GRID ── */
+.courses-section{background:var(--off);}
+.filters{
+  display:flex;gap:0.7rem;flex-wrap:wrap;margin-bottom:3rem;
+}
+.filter-btn{
+  padding:0.5rem 1.2rem;border-radius:100px;font-size:0.8rem;font-weight:600;
+  border:1.5px solid rgba(0,0,0,0.12);color:var(--text-mid);background:transparent;
+  cursor:pointer;transition:all 0.2s;letter-spacing:0.02em;
+}
+.filter-btn.active,.filter-btn:hover{
+  background:var(--ink);color:var(--white);border-color:var(--ink);
+}
+.filter-btn.teal.active{background:var(--teal);color:var(--ink);border-color:var(--teal);}
+.filter-btn.violet.active{background:var(--violet);color:var(--white);border-color:var(--violet);}
+.filter-btn.gold.active{background:var(--gold);color:var(--ink);border-color:var(--gold);}
+
+.courses-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+  gap:1.5rem;
+}
+.course-card{
+  background:var(--white);border-radius:var(--r);
+  border:1px solid rgba(0,0,0,0.07);
+  padding:28px;position:relative;overflow:hidden;
+  transition:all 0.3s;cursor:default;
+}
+.course-card:hover{
+  transform:translateY(-5px);
+  box-shadow:0 20px 50px rgba(0,0,0,0.12);
+  border-color:transparent;
+}
+.course-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:3px;
+}
+.course-card.cat-cyber::before{background:linear-gradient(90deg,#00c9a7,#00e8c0);}
+.course-card.cat-safety::before{background:linear-gradient(90deg,#7c3aed,#a855f7);}
+.course-card.cat-clinical::before{background:linear-gradient(90deg,#f5c842,#fbbf24);}
+.course-card.cat-mental::before{background:linear-gradient(90deg,#ff6b8a,#f43f5e);}
+
+.card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:1rem;}
+.card-emoji{
+  width:46px;height:46px;border-radius:12px;
+  display:flex;align-items:center;justify-content:center;font-size:1.3rem;
+}
+.ce-teal{background:rgba(0,201,167,0.1);}
+.ce-violet{background:rgba(124,58,237,0.1);}
+.ce-gold{background:rgba(245,200,66,0.12);}
+.ce-rose{background:rgba(255,107,138,0.1);}
+.card-price{
+  font-family:'Montserrat',sans-serif;
+  font-size:1.3rem;font-weight:700;color:var(--ink);
+}
+.card-num{
+  position:absolute;bottom:18px;right:20px;
+  font-family:'Montserrat',sans-serif;
+  font-size:4rem;font-weight:700;
+  color:rgba(0,0,0,0.04);line-height:1;pointer-events:none;
+}
+.card-title{
+  font-family:'Montserrat',sans-serif;
+  font-size:1rem;font-weight:600;color:var(--ink);
+  margin-bottom:0.6rem;line-height:1.3;letter-spacing:-0.01em;
+}
+.card-desc{font-size:0.84rem;color:var(--text-mid);line-height:1.6;margin-bottom:1.2rem;}
+.card-tags{display:flex;gap:0.5rem;flex-wrap:wrap;}
+.ctag{
+  font-size:0.68rem;font-weight:700;padding:0.22rem 0.65rem;
+  border-radius:100px;letter-spacing:0.04em;
+}
+.ctag-teal{background:rgba(0,201,167,0.1);color:#007a65;}
+.ctag-violet{background:rgba(124,58,237,0.1);color:#5b21b6;}
+.ctag-gold{background:rgba(245,200,66,0.12);color:#786000;}
+.ctag-rose{background:rgba(255,107,138,0.1);color:#9f1239;}
+.ctag-hot{background:var(--ink);color:var(--white);}
+.ctag-new{background:var(--violet);color:var(--white);}
+
+/* ── COMPARISON TABLE ── */
+.table-wrap{overflow-x:auto;border-radius:var(--r);box-shadow:0 4px 30px rgba(0,0,0,0.08);}
+.compare-table{width:100%;border-collapse:collapse;}
+.compare-table thead tr{background:var(--ink);}
+.compare-table th{
+  padding:1rem 1.2rem;text-align:left;
+  font-family:'Montserrat',sans-serif;
+  font-size:0.78rem;font-weight:600;color:rgba(255,255,255,0.5);
+  letter-spacing:0.06em;text-transform:uppercase;
+}
+.compare-table th:last-child{text-align:right;}
+.compare-table tbody tr{
+  border-bottom:1px solid rgba(0,0,0,0.05);background:var(--white);transition:background 0.15s;
+}
+.compare-table tbody tr:hover{background:#f0faf8;}
+.compare-table td{padding:0.9rem 1.2rem;font-size:0.88rem;color:var(--text);}
+.compare-table td:last-child{text-align:right;}
+.td-name{font-weight:600;color:var(--ink);}
+.td-price{font-family:'Montserrat',sans-serif;font-weight:700;font-size:1rem;color:var(--teal-dim);}
+.cat-strip{width:4px;padding:0;}
+.cat-strip.c1{background:var(--teal);}
+.cat-strip.c2{background:var(--violet);}
+.cat-strip.c3{background:var(--gold);}
+.cat-strip.c4{background:var(--rose);}
+.compare-table tfoot tr{background:var(--ink);}
+.compare-table tfoot td{
+  padding:1.1rem 1.2rem;color:rgba(255,255,255,0.8);
+  font-family:'Montserrat',sans-serif;font-weight:600;font-size:0.95rem;
+}
+.compare-table tfoot td:last-child{text-align:right;}
+.save-tag{
+  display:inline-block;background:var(--teal);color:var(--ink);
+  font-size:0.72rem;font-weight:800;padding:0.2rem 0.7rem;border-radius:100px;margin-left:0.5rem;
+}
+.strike{text-decoration:line-through;opacity:0.35;margin-right:0.4rem;}
+
+/* ── WHO IT'S FOR ── */
+.who-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+.who-card{
+  padding:30px;border-radius:var(--r);
+  border:1px solid rgba(255,255,255,0.06);
+  background:rgba(255,255,255,0.03);
+  transition:all 0.3s;
+}
+.who-card:hover{
+  background:rgba(0,201,167,0.06);
+  border-color:rgba(0,201,167,0.2);
+  transform:translateY(-3px);
+}
+.who-icon{font-size:2rem;margin-bottom:1rem;display:block;}
+.who-card h3{
+  font-family:'Montserrat',sans-serif;
+  font-size:1rem;font-weight:600;color:var(--white);margin-bottom:0.5rem;
+}
+.who-card p{font-size:0.84rem;color:rgba(255,255,255,0.45);line-height:1.65;}
+
+/* ── JOBS ── */
+.jobs-section{background:var(--off);}
+.jobs-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem;margin:2.5rem 0 3.5rem;}
+.jstat{
+  padding:24px;border-radius:var(--r);background:var(--white);
+  border:1px solid rgba(0,0,0,0.06);border-top:3px solid var(--teal);
+  transition:all 0.25s;
+}
+.jstat:hover{box-shadow:0 8px 30px rgba(0,201,167,0.1);}
+.jstat.violet{border-top-color:var(--violet);}
+.jstat.gold{border-top-color:var(--gold);}
+.jstat-num{
+  font-family:'Montserrat',sans-serif;
+  font-size:2rem;font-weight:700;color:var(--ink);line-height:1;
+}
+.jstat-num em{color:var(--teal);font-style:normal;}
+.jstat.violet .jstat-num em{color:var(--violet);}
+.jstat.gold .jstat-num em{color:#b8860b;}
+.jstat-label{font-size:0.78rem;color:var(--text-soft);margin-top:0.3rem;line-height:1.4;}
+
+.jobs-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:1.2rem;}
+.job-card{
+  background:var(--white);border-radius:var(--r);
+  border:1px solid rgba(0,0,0,0.07);padding:26px;
+  transition:all 0.3s;
+}
+.job-card:hover{
+  border-color:var(--teal);
+  box-shadow:0 8px 30px rgba(0,201,167,0.1);
+  transform:translateY(-3px);
+}
+.job-top{display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;margin-bottom:0.8rem;}
+.job-icon{font-size:1.5rem;}
+.job-sal{
+  background:var(--ink);color:var(--white);
+  font-family:'Montserrat',sans-serif;
+  font-size:0.78rem;font-weight:600;
+  padding:0.3rem 0.8rem;border-radius:100px;
+  white-space:nowrap;
+}
+.job-title{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.98rem;font-weight:600;color:var(--ink);
+  margin-bottom:0.5rem;line-height:1.3;letter-spacing:-0.01em;
+}
+.job-desc{font-size:0.82rem;color:var(--text-mid);line-height:1.6;margin-bottom:1rem;}
+.job-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:0.9rem;}
+.job-tag{
+  background:var(--mist);color:var(--text-mid);
+  font-size:0.68rem;font-weight:600;
+  padding:0.2rem 0.55rem;border-radius:4px;
+}
+.job-courses-lbl{font-size:0.68rem;font-weight:700;color:var(--teal-dim);letter-spacing:0.06em;text-transform:uppercase;margin-bottom:0.3rem;}
+.job-courses-txt{font-size:0.78rem;color:var(--text-mid);line-height:1.5;}
+.sal-note{
+  margin-top:2rem;padding:16px 20px;
+  border-radius:var(--r);background:var(--mist);
+  border-left:3px solid var(--teal);
+  font-size:0.78rem;color:var(--text-mid);line-height:1.6;
+}
+
+/* ── CUSTOM BUILDER ── */
+.builder-section{background:var(--ink);}
+.builder-wrap{display:grid;grid-template-columns:1fr 460px;gap:5rem;align-items:start;}
+.builder-info .lead-dark{margin-bottom:2rem;}
+.builder-perks{display:flex;flex-direction:column;gap:0.9rem;}
+.bperk{
+  display:flex;align-items:flex-start;gap:1rem;
+  padding:16px;border-radius:10px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.06);
+}
+.bperk-icon{
+  width:38px;height:38px;flex-shrink:0;border-radius:8px;
+  background:rgba(0,201,167,0.1);
+  display:flex;align-items:center;justify-content:center;font-size:1rem;
+}
+.bperk h4{font-size:0.88rem;font-weight:700;color:var(--white);margin-bottom:0.2rem;}
+.bperk p{font-size:0.78rem;color:rgba(255,255,255,0.4);line-height:1.5;}
+
+.builder-card{
+  background:var(--ink-mid);border-radius:16px;
+  border:1px solid rgba(0,201,167,0.15);padding:32px;
+}
+.builder-head{
+  display:flex;justify-content:space-between;align-items:center;margin-bottom:1.5rem;
+}
+.builder-head h3{
+  font-family:'Montserrat',sans-serif;
+  font-size:1rem;font-weight:600;color:var(--white);
+}
+.counter{
+  background:rgba(0,201,167,0.15);color:var(--teal);
+  font-size:0.75rem;font-weight:700;
+  padding:0.3rem 0.9rem;border-radius:100px;transition:all 0.3s;
+}
+.counter.active{background:var(--teal);color:var(--ink);}
+
+.picker-list{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1.2rem;}
+.picker{
+  display:flex;align-items:center;gap:0.8rem;
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:8px;padding:10px 14px;
+  cursor:pointer;transition:all 0.2s;user-select:none;
+}
+.picker:hover{background:rgba(255,255,255,0.07);border-color:rgba(0,201,167,0.2);}
+.picker.on{background:rgba(0,201,167,0.1);border-color:rgba(0,201,167,0.35);}
+.pcheck{
+  width:18px;height:18px;border-radius:5px;flex-shrink:0;
+  border:1.5px solid rgba(255,255,255,0.2);
+  background:transparent;display:flex;align-items:center;justify-content:center;
+  transition:all 0.2s;font-size:0.7rem;color:var(--ink);font-weight:700;
+}
+.picker.on .pcheck{background:var(--teal);border-color:var(--teal);}
+.pdot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.pdot.c{background:var(--teal);}
+.pdot.s{background:var(--violet);}
+.pdot.m{background:var(--rose);}
+.pname{font-size:0.82rem;color:rgba(255,255,255,0.75);flex:1;line-height:1.3;}
+.pprice{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.9rem;font-weight:600;color:rgba(255,255,255,0.5);flex-shrink:0;
+}
+.picker.on .pprice{color:var(--teal);}
+
+.legend{display:flex;gap:1rem;margin-bottom:1rem;font-size:0.7rem;color:rgba(255,255,255,0.35);}
+.legend span{display:flex;align-items:center;gap:4px;}
+.ldot{width:6px;height:6px;border-radius:50%;display:inline-block;}
+
+.bsum{border-top:1px solid rgba(255,255,255,0.06);padding-top:1rem;margin-bottom:1rem;}
+.brow{
+  display:flex;justify-content:space-between;align-items:center;
+  font-size:0.84rem;color:rgba(255,255,255,0.4);margin-bottom:0.4rem;
+}
+.brow.btotal{
+  font-family:'Montserrat',sans-serif;font-size:1rem;font-weight:600;
+  color:var(--white);margin-top:0.5rem;padding-top:0.5rem;
+  border-top:1px solid rgba(255,255,255,0.06);
+}
+.brow .saving{color:var(--teal);}
+.build-btn{
+  display:block;width:100%;text-align:center;
+  background:var(--teal);color:var(--ink);
+  padding:1rem;border-radius:100px;border:none;
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.95rem;
+  cursor:pointer;transition:all 0.25s;
+  box-shadow:0 0 25px rgba(0,201,167,0.25);
+}
+.build-btn:hover{background:#00e8c0;box-shadow:0 0 40px rgba(0,201,167,0.4);transform:translateY(-2px);}
+.build-btn:disabled{background:rgba(255,255,255,0.08);color:rgba(255,255,255,0.25);cursor:not-allowed;box-shadow:none;transform:none;}
+.bnote{font-size:0.73rem;color:rgba(255,255,255,0.3);text-align:center;margin-top:0.8rem;line-height:1.5;}
+
+/* ── PRICING ── */
+.plans-section{background:var(--ink-mid);}
+.plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;margin-top:3rem;}
+.plan{
+  background:rgba(255,255,255,0.03);
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:16px;padding:36px;position:relative;
+  transition:all 0.3s;
+}
+.plan:hover,.plan.featured{
+  border-color:rgba(0,201,167,0.3);
+  background:rgba(0,201,167,0.06);
+}
+.plan-badge{
+  position:absolute;top:-13px;left:50%;transform:translateX(-50%);
+  background:var(--teal);color:var(--ink);
+  font-size:0.68rem;font-weight:800;padding:0.28rem 1rem;
+  border-radius:100px;letter-spacing:0.06em;text-transform:uppercase;white-space:nowrap;
+}
+.plan-name{
+  font-size:0.75rem;font-weight:700;color:rgba(255,255,255,0.4);
+  letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem;
+}
+.plan-price{
+  font-family:'Montserrat',sans-serif;
+  font-size:3rem;font-weight:700;color:var(--white);line-height:1;margin-bottom:0.3rem;
+}
+.plan-price sup{font-size:1.2rem;vertical-align:super;}
+.plan-note{font-size:0.75rem;color:rgba(255,255,255,0.3);margin-bottom:1.5rem;padding-bottom:1.5rem;border-bottom:1px solid rgba(255,255,255,0.06);}
+.plan-feats{list-style:none;margin-bottom:2rem;}
+.plan-feats li{
+  display:flex;align-items:flex-start;gap:0.6rem;
+  color:rgba(255,255,255,0.55);font-size:0.84rem;padding:0.4rem 0;
+}
+.plan-feats li::before{content:'✓';color:var(--teal);font-weight:700;flex-shrink:0;}
+.plan-btn{
+  display:block;width:100%;text-align:center;
+  padding:0.85rem;border-radius:100px;
+  font-weight:700;font-size:0.85rem;text-decoration:none;transition:all 0.2s;
+}
+.plan-btn-primary{background:var(--teal);color:var(--ink);box-shadow:0 0 20px rgba(0,201,167,0.25);}
+.plan-btn-primary:hover{background:#00e8c0;}
+.plan-btn-outline{border:1px solid rgba(255,255,255,0.15);color:rgba(255,255,255,0.6);}
+.plan-btn-outline:hover{border-color:var(--teal);color:var(--teal);}
+
+/* ── ADVISOR ── */
+.advisor-section{
+  background:linear-gradient(135deg,var(--ink) 0%,#0d1f35 100%);
+  position:relative;overflow:hidden;
+}
+.advisor-blob{
+  position:absolute;top:-200px;right:-200px;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,201,167,0.08) 0%,transparent 60%);
+  pointer-events:none;
+}
+.advisor-grid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center;position:relative;z-index:2;}
+.adv-left .lead-dark{margin-bottom:2rem;}
+.adv-feats{display:flex;flex-direction:column;gap:0.6rem;margin-bottom:2rem;}
+.adv-feat{
+  display:flex;align-items:center;gap:0.8rem;
+  color:rgba(255,255,255,0.6);font-size:0.88rem;
+}
+.adv-feat::before{
+  content:'✓';width:20px;height:20px;flex-shrink:0;border-radius:50%;
+  background:rgba(0,201,167,0.12);border:1px solid rgba(0,201,167,0.25);
+  display:flex;align-items:center;justify-content:center;
+  color:var(--teal);font-size:0.65rem;font-weight:700;
+}
+.adv-avs{display:flex;align-items:center;gap:0.8rem;}
+.av-stack{display:flex;}
+.av{
+  width:38px;height:38px;border-radius:50%;border:2px solid var(--ink);
+  background:var(--teal);display:flex;align-items:center;justify-content:center;
+  font-size:0.9rem;margin-left:-10px;
+}
+.av:first-child{margin-left:0;}
+.av-txt{font-size:0.78rem;color:rgba(255,255,255,0.35);line-height:1.5;}
+.av-txt strong{color:var(--white);display:block;}
+
+.adv-form{background:var(--white);border-radius:20px;padding:40px;}
+.af-title{
+  font-family:'Montserrat',sans-serif;
+  font-size:1.3rem;font-weight:700;color:var(--ink);
+  letter-spacing:-0.02em;margin-bottom:0.3rem;
+}
+.af-sub{font-size:0.82rem;color:var(--text-mid);margin-bottom:1.8rem;line-height:1.5;}
+.fg{display:flex;flex-direction:column;gap:0.4rem;margin-bottom:1rem;}
+.fg label{font-size:0.7rem;font-weight:700;color:var(--ink);letter-spacing:0.06em;text-transform:uppercase;}
+.fg input,.fg textarea{
+  padding:0.8rem 1rem;
+  border:1.5px solid rgba(0,0,0,0.1);border-radius:10px;
+  font-family:'Source Sans 3',sans-serif;font-size:0.9rem;color:var(--ink);
+  background:var(--off);transition:all 0.2s;outline:none;width:100%;
+}
+.fg input:focus,.fg textarea:focus{border-color:var(--teal);background:var(--white);box-shadow:0 0 0 3px rgba(0,201,167,0.1);}
+.fg textarea{resize:vertical;min-height:90px;}
+.af-btn{
+  display:block;width:100%;
+  background:var(--ink);color:var(--white);
+  padding:1rem;border-radius:100px;border:none;
+  font-family:'Montserrat',sans-serif;font-weight:700;font-size:0.95rem;
+  cursor:pointer;transition:all 0.25s;
+}
+.af-btn:hover{background:var(--teal);color:var(--ink);transform:translateY(-2px);}
+.af-priv{font-size:0.7rem;color:var(--text-soft);text-align:center;margin-top:0.8rem;line-height:1.5;}
+.af-success{display:none;text-align:center;padding:2rem;}
+.af-success .si{font-size:3rem;display:block;margin-bottom:1rem;}
+.af-success h4{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:700;color:var(--ink);margin-bottom:0.5rem;}
+.af-success p{font-size:0.85rem;color:var(--text-mid);line-height:1.6;}
+
+/* ── FAQ ── */
+.faq-section{background:var(--off);}
+.faq-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-top:3rem;}
+.faq-item{
+  background:var(--white);border-radius:var(--r);
+  border:1px solid rgba(0,0,0,0.06);padding:24px;
+  transition:all 0.25s;
+}
+.faq-item:hover{border-color:var(--teal);box-shadow:0 4px 20px rgba(0,201,167,0.08);}
+.faq-item h4{
+  font-family:'Montserrat',sans-serif;
+  font-size:0.95rem;font-weight:600;color:var(--ink);margin-bottom:0.5rem;
+}
+.faq-item p{font-size:0.84rem;color:var(--text-mid);line-height:1.65;}
+
+/* ── CTA BANNER ── */
+.cta-banner{
+  background:var(--teal);padding:80px 5%;text-align:center;
+  position:relative;overflow:hidden;
+}
+.cta-banner::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse 50% 80% at 50% 50%,rgba(255,255,255,0.1) 0%,transparent 60%);
+}
+.cta-banner h2{
+  font-family:'Montserrat',sans-serif;
+  font-size:clamp(2rem,5vw,4rem);font-weight:700;
+  color:var(--ink);letter-spacing:-0.03em;margin-bottom:1rem;position:relative;
+}
+.cta-banner p{color:rgba(10,15,30,0.65);font-size:1rem;margin-bottom:2.5rem;position:relative;max-width:480px;margin-left:auto;margin-right:auto;}
+.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;position:relative;}
+.btn-dark{
+  background:var(--ink);color:var(--white);
+  padding:0.9rem 2rem;border-radius:100px;
+  font-weight:700;font-size:0.88rem;text-decoration:none;transition:all 0.2s;
+}
+.btn-dark:hover{background:#1a2a40;}
+.btn-light{
+  border:2px solid rgba(10,15,30,0.2);color:var(--ink);
+  padding:0.9rem 2rem;border-radius:100px;
+  font-weight:500;font-size:0.88rem;text-decoration:none;transition:all 0.2s;
+}
+.btn-light:hover{border-color:var(--ink);}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);padding:36px 5%;text-align:center;
+  border-top:1px solid rgba(255,255,255,0.05);
+}
+footer p{font-size:0.78rem;color:rgba(255,255,255,0.2);}
+footer a{color:var(--teal);text-decoration:none;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:1100px){
+  .bundle-hero-wrap{grid-template-columns:1fr;gap:3rem;}
+  .price-card{position:static;}
+  .builder-wrap{grid-template-columns:1fr;gap:2.5rem;}
+  .advisor-grid{grid-template-columns:1fr;gap:2.5rem;}
+}
+@media(max-width:900px){
+  .who-grid{grid-template-columns:1fr 1fr;}
+  .plans-grid{grid-template-columns:1fr;}
+  .faq-grid{grid-template-columns:1fr;}
+  .jobs-stats{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:600px){
+  .nav-links{display:none;}
+  .who-grid{grid-template-columns:1fr;}
+  .jobs-stats{grid-template-columns:1fr;}
+  .hero-stats{gap:1.5rem;}
+  .section{padding:70px 4%;}
+  .hero{padding:100px 4% 70px;}
+  .adv-form{padding:24px;}
+  .builder-card{padding:24px;}
+  .hero-rings{display:none;}
+}
+
+/* -- Light sky-blue theme refresh -- */
+:root {
+  --ink: #0f172a;
+  --ink-mid: #ffffff;
+  --teal: #38bdf8;
+  --teal-dim: #0284c7;
+  --teal-glow: rgba(56,189,248,0.16);
+  --teal-soft: rgba(56,189,248,0.10);
+  --violet: #0284c7;
+  --violet-soft: rgba(2,132,199,0.10);
+  --gold: #7dd3fc;
+  --rose: #0ea5e9;
+  --white: #ffffff;
+  --off: #f0faff;
+  --mist: #e0f2fe;
+  --text: #0f172a;
+  --text-mid: #475569;
+  --text-soft: #64748b;
+  --border: #bae6fd;
+  --card: rgba(255,255,255,0.98);
+}
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: var(--off);
+  color: var(--text);
+}
+h1,h2,h3,h4,h5,h6,.logo,.display,.hstat-num,.marquee-item,.pillar-name,.pc-price,.card-price,.card-title,.td-price,.jstat-num,.job-icon,.job-title,.builder-card h3,.pprice,.btotal,.plan-price,.af-title,.af-success h4,.faq-item h4,.cta-banner h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+body::before { opacity: 0.12; }
+nav { background: rgba(255,255,255,0.92); border-bottom: 1px solid var(--border); box-shadow: 0 12px 30px rgba(2,132,199,0.08); }
+.logo,.hero h1,.hstat-num,.display,.who-card h4,.bperk h4,.builder-card h3,.plan-price,.af-title,.faq-item h4 { color: var(--ink); }
+.logo span,.hero h1 .teal,.hstat-num span,.label,.brow .saving,.job-courses-lbl,.td-price { color: var(--teal-dim); }
+.nav-links a { color: var(--text-mid); }
+.nav-links a:hover { color: var(--teal-dim); }
+.nav-btn,.btn-glow,.pc-btn,.build-btn,.plan-btn-primary,.af-btn,.tf-save { background: var(--teal-dim); color: var(--white); box-shadow: 0 10px 24px rgba(2,132,199,0.18); }
+.nav-btn:hover,.btn-glow:hover,.pc-btn:hover,.build-btn:hover,.plan-btn-primary:hover,.af-btn:hover { background: #0369a1; }
+.hero,.section-dark,.builder-section,.plans-section,.advisor-section,footer { background: linear-gradient(180deg,#ffffff 0%,#f0faff 100%); color: var(--text); }
+.hero-mesh { background: radial-gradient(ellipse 80% 60% at 65% 25%, rgba(56,189,248,0.20) 0%, transparent 62%), radial-gradient(ellipse 45% 35% at 18% 80%, rgba(186,230,253,0.45) 0%, transparent 56%); }
+.ring { border-color: rgba(56,189,248,0.16); }
+.ring:nth-child(1),.ring:nth-child(4) { border-color: rgba(2,132,199,0.16); }
+.hero-pill,.pc-badge,.counter,.adv-feat,.ctag-teal,.ctag-violet,.ctag-gold,.ctag-rose,.job-tag { background: var(--teal-soft); border-color: var(--border); color: var(--teal-dim); }
+.hero h1 .dim { color: #64748b; }
+.hero-desc,.lead-dark,.who-card p,.bperk p,.pname,.pprice,.legend,.brow,.bnote,.plan-name,.plan-note,.plan-feats li,.adv-feats,.av-txt,footer p { color: var(--text-mid); }
+.btn-ghost,.plan-btn-outline,.btn-light { border-color: var(--border); color: var(--teal-dim); background: rgba(255,255,255,0.64); }
+.btn-ghost:hover,.plan-btn-outline:hover,.btn-light:hover { border-color: var(--teal-dim); color: var(--teal-dim); }
+.hero-stats { border-top-color: var(--border); }
+.marquee-wrap,.cta-banner { background: var(--teal); color: var(--ink); }
+.section-light,.section-white,.courses-section,.jobs-section,.faq-section { background: var(--off); color: var(--text); }
+.pillar,.course-card,.jstat,.job-card,.builder-card,.plan,.adv-form,.faq-item,.price-card { background: var(--white); border: 1px solid var(--border); box-shadow: 0 14px 36px rgba(2,132,199,0.08); }
+.pillar:hover,.course-card:hover,.jstat:hover,.job-card:hover,.faq-item:hover,.plan.featured { border-color: var(--teal); box-shadow: 0 18px 42px rgba(2,132,199,0.13); }
+.price-card,.builder-card { color: var(--text); }
+.pc-was,.pc-note,.pc-list li { color: var(--text-mid); }
+.pc-save { background: var(--mist); color: var(--teal-dim); }
+.pc-list li::before,.plan-feats li::before { color: var(--teal-dim); }
+.filter-btn { border-color: var(--border); color: var(--text-mid); background: var(--white); }
+.filter-btn.active,.filter-btn.teal.active,.filter-btn.violet.active,.filter-btn.gold.active,.ctag-hot,.ctag-new,.job-icon,.compare-table thead tr,.compare-table tfoot tr { background: var(--teal-dim); color: var(--white); border-color: var(--teal-dim); }
+.course-card.cat-cyber::before,.course-card.cat-safety::before,.course-card.cat-clinical::before,.course-card.cat-mental::before { background: linear-gradient(90deg,#38bdf8,#0284c7); }
+.ce-teal,.ce-violet,.ce-gold,.ce-rose,.pi-teal,.pi-violet,.pi-gold { background: var(--teal-soft); }
+.compare-table tbody tr:hover { background: #f0faff; }
+.who-card,.bperk,.picker { background: rgba(255,255,255,0.82); border-color: var(--border); }
+.who-card:hover,.picker:hover,.picker.on { background: var(--teal-soft); border-color: var(--teal); }
+.picker.on .pcheck { background: var(--teal-dim); border-color: var(--teal-dim); color: var(--white); }
+.pcheck { border-color: var(--border); color: var(--white); }
+.pdot.c,.pdot.s,.pdot.m,.ldot { background: var(--teal-dim); }
+.bsum,.job-note { background: var(--mist); }
+.build-btn:disabled { background: #e2e8f0; color: #94a3b8; }
+.plan-badge { background: var(--teal-dim); color: var(--white); }
+.advisor-blob { background: radial-gradient(circle,rgba(56,189,248,0.18) 0%,transparent 60%); }
+.av { background: var(--teal); border-color: var(--white); color: var(--ink); }
+.av-txt strong { color: var(--ink); }
+.fg input,.fg textarea { font-family: 'Source Sans 3', sans-serif; background: #f8fdff; border-color: var(--border); }
+.fg input:focus,.fg textarea:focus { border-color: var(--teal-dim); box-shadow: 0 0 0 3px rgba(56,189,248,0.18); }
+.btn-dark { background: var(--ink); color: var(--white); }
+footer { border-top: 1px solid var(--border); }
+footer a { color: var(--teal-dim); }
+.menu-toggle { display:none; border:1px solid var(--border); background:var(--white); color:var(--teal-dim); border-radius:999px; width:42px; height:42px; font-size:1.1rem; font-weight:800; cursor:pointer; }
+@media(max-width:600px){
+  nav { height:auto; min-height:68px; flex-wrap:wrap; padding-top:12px; padding-bottom:12px; }
+  .menu-toggle { display:flex; align-items:center; justify-content:center; }
+  .nav-links { display:none; width:100%; flex-direction:column; gap:0.25rem; padding:0.75rem 0 0.25rem; }
+  .nav-links.open { display:flex; }
+  .nav-links a { display:block; padding:0.65rem 0; }
+  .nav-btn { margin-left:auto; margin-right:0.65rem; padding:0.55rem 1rem; }
+}
+
+/* -- Final light-theme contrast fixes -- */
+.who-card h3,
+.builder-head h3,
+.bperk h4 {
+  color: var(--ink);
+}
+.who-card p,
+.bperk p,
+.builder-card .pname,
+.builder-card .pprice,
+.builder-card .legend,
+.builder-card .brow,
+.builder-card .bnote {
+  color: var(--text-mid);
+}
+.builder-card .brow.btotal {
+  color: var(--ink);
+  border-top-color: var(--border);
+}
+.builder-card .bsum {
+  border-top-color: var(--border);
+  background: var(--mist);
+  padding: 1rem;
+  border-radius: 10px;
+}
+.builder-card .picker {
+  color: var(--text);
+}
+.builder-card .picker.on .pprice,
+.builder-card .brow .saving {
+  color: var(--teal-dim);
+}
+
+/* -- Reference attachment theme: navy, sky blue, Montserrat + Source Sans 3 -- */
+:root {
+  --teal: #0284c7;
+  --teal-light: #38bdf8;
+  --teal-dark: #0369a1;
+  --mint: #e0f5ff;
+  --navy: #0c2d48;
+  --navy-mid: #1a4a6b;
+  --gold: #f59e0b;
+  --gold-light: #fef3c7;
+  --white: #ffffff;
+  --off-white: #f0faff;
+  --ink: #0c2d48;
+  --ink-mid: #1a4a6b;
+  --off: #f0faff;
+  --mist: #e0f5ff;
+  --text: #0c2d48;
+  --text-mid: #4a7a99;
+  --text-soft: #6b94ad;
+  --border: #bae6fd;
+  --card: #ffffff;
+}
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: var(--off-white);
+  color: var(--text);
+}
+h1,h2,h3,h4,h5,h6,.logo,.display,.hstat-num,.marquee-item,.pillar-name,.pc-price,.card-price,.card-title,.td-price,.jstat-num,.job-icon,.job-title,.builder-card h3,.pprice,.btotal,.plan-price,.af-title,.af-success h4,.faq-item h4,.cta-banner h2 {
+  font-family: 'Montserrat', sans-serif;
+}
+nav {
+  background: rgba(12,45,72,0.97);
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  box-shadow: none;
+  height: 64px;
+}
+.logo { color: var(--white); font-weight: 800; }
+.logo span { color: var(--teal-light); }
+.nav-links a { color: rgba(255,255,255,0.7); }
+.nav-links a:hover { color: var(--white); }
+.nav-btn,.btn-glow,.pc-btn,.build-btn,.plan-btn-primary,.af-btn {
+  background: var(--teal-light);
+  color: var(--white);
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(2,132,199,0.4);
+}
+.nav-btn { border-radius: 6px; }
+.nav-btn:hover,.btn-glow:hover,.pc-btn:hover,.build-btn:hover,.plan-btn-primary:hover,.af-btn:hover {
+  background: var(--teal);
+  color: var(--white);
+  box-shadow: 0 8px 28px rgba(2,132,199,0.5);
+}
+.hero {
+  background: var(--navy);
+  color: var(--white);
+}
+.hero-mesh {
+  background:
+    radial-gradient(ellipse 60% 70% at 80% 50%, rgba(2,132,199,0.18) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 50% at 10% 80%, rgba(2,132,199,0.12) 0%, transparent 50%);
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  opacity: 0.04;
+  pointer-events: none;
+  background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+.hero-content { position: relative; z-index: 2; }
+.hero h1,.hero .hstat-num { color: var(--white); }
+.hero h1 .teal,.hero .hstat-num span { color: var(--teal-light); }
+.hero h1 .dim { color: rgba(255,255,255,0.48); }
+.hero-desc,.hero .hstat-label { color: rgba(255,255,255,0.65); }
+.hero-pill {
+  background: rgba(2,132,199,0.2);
+  border: 1px solid rgba(2,132,199,0.4);
+  color: #7dd3fc;
+}
+.pulse { background: #7dd3fc; }
+.hero-stats { border-top-color: rgba(255,255,255,0.1); }
+.btn-ghost,.btn-light,.plan-btn-outline {
+  border: 1.5px solid rgba(255,255,255,0.25);
+  color: var(--white);
+  background: transparent;
+  border-radius: 8px;
+}
+.btn-ghost:hover,.btn-light:hover,.plan-btn-outline:hover {
+  border-color: var(--teal-light);
+  color: var(--teal-light);
+  background: transparent;
+}
+.marquee-wrap {
+  background: var(--navy-mid);
+  border-color: rgba(255,255,255,0.06);
+}
+.marquee-item { color: rgba(255,255,255,0.7); }
+.marquee-item::before { color: var(--teal-light); }
+.section-light,.courses-section,.jobs-section,.faq-section { background: var(--white); color: var(--text); }
+.section-white { background: var(--off-white); color: var(--text); }
+.section-dark,.builder-section,.plans-section,.advisor-section {
+  background: var(--navy);
+  color: var(--white);
+}
+.section-dark .display,.builder-section .display,.plans-section .display,.advisor-section .display { color: var(--white); }
+.section-dark .lead-dark,.builder-section .lead-dark,.plans-section .lead-dark,.advisor-section .lead-dark { color: rgba(255,255,255,0.58); }
+.label { color: var(--teal-light); }
+.label::before { background: var(--teal-light); }
+.display { color: var(--navy); font-weight: 800; }
+.lead { color: var(--text-mid); }
+.pillar,.course-card,.jstat,.job-card,.faq-item {
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  box-shadow: none;
+}
+.pillar:hover,.course-card:hover,.jstat:hover,.job-card:hover,.faq-item:hover {
+  background: var(--white);
+  border-color: var(--teal-light);
+  box-shadow: 0 8px 32px rgba(2,132,199,0.12);
+}
+.pillar-name,.card-title,.job-title,.faq-item h4,.who-card h3 { color: var(--navy); }
+.pillar-desc,.card-desc,.job-desc,.faq-item p,.who-card p { color: var(--text-mid); }
+.price-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: var(--white);
+  box-shadow: none;
+}
+.price-card .pc-price,.price-card .pc-list li { color: var(--white); }
+.price-card .pc-was,.price-card .pc-note { color: rgba(255,255,255,0.42); }
+.pc-badge,.counter,.ctag-teal,.ctag-violet,.ctag-gold,.ctag-rose,.job-tag {
+  background: var(--mint);
+  border-color: transparent;
+  color: var(--teal-dark);
+}
+.pc-save,.plan-badge {
+  background: var(--gold);
+  color: var(--navy);
+}
+.pc-list li::before,.plan-feats li::before { color: var(--teal-light); }
+.filter-btn {
+  background: var(--off-white);
+  border: 1px solid var(--border);
+  color: var(--text-mid);
+  border-radius: 8px;
+}
+.filter-btn.active,.filter-btn:hover,.filter-btn.teal.active,.filter-btn.violet.active,.filter-btn.gold.active {
+  background: var(--teal);
+  border-color: var(--teal);
+  color: var(--white);
+}
+.course-card.cat-cyber::before,.course-card.cat-safety::before,.course-card.cat-clinical::before,.course-card.cat-mental::before { background: var(--teal-light); }
+.card-emoji,.ce-teal,.ce-violet,.ce-gold,.ce-rose,.pi-teal,.pi-violet,.pi-gold,.job-icon {
+  background: var(--mint);
+  color: var(--teal);
+}
+.card-price,.td-price,.job-courses-lbl,.jstat-num,.jstat-num em { color: var(--teal); }
+.ctag-hot,.ctag-new,.job-sal {
+  background: var(--teal);
+  color: var(--white);
+}
+.table-wrap { box-shadow: 0 4px 24px rgba(13,31,45,0.08); }
+.compare-table thead tr { background: var(--navy); }
+.compare-table th { color: rgba(255,255,255,0.7); }
+.compare-table tbody tr { background: var(--white); }
+.compare-table tbody tr:hover { background: var(--off-white); }
+.compare-table tfoot tr { background: var(--mint); }
+.compare-table tfoot td { color: var(--teal-dark); }
+.tf-save { background: var(--teal); color: var(--white); }
+.who-card,.bperk,.builder-card,.plan {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  box-shadow: none;
+}
+.who-card:hover,.bperk:hover,.plan.featured {
+  border-color: var(--teal-light);
+  background: rgba(2,132,199,0.12);
+  box-shadow: none;
+}
+.who-card h3,.bperk h4,.builder-head h3,.plan-price { color: var(--white); }
+.who-card p,.bperk p,.plan-name,.plan-note,.plan-feats li { color: rgba(255,255,255,0.65); }
+.builder-card .picker {
+  background: rgba(255,255,255,0.04);
+  border-color: rgba(255,255,255,0.1);
+  color: var(--white);
+}
+.builder-card .picker:hover,.builder-card .picker.on {
+  background: rgba(2,132,199,0.14);
+  border-color: var(--teal-light);
+}
+.builder-card .pname { color: rgba(255,255,255,0.78); }
+.builder-card .pprice,.builder-card .legend,.builder-card .brow,.builder-card .bnote { color: rgba(255,255,255,0.52); }
+.builder-card .brow.btotal { color: var(--white); border-top-color: rgba(255,255,255,0.1); }
+.builder-card .bsum {
+  background: rgba(255,255,255,0.04);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  border-radius: 10px;
+}
+.builder-card .brow .saving,.builder-card .picker.on .pprice { color: var(--teal-light); }
+.picker.on .pcheck { background: var(--teal-light); border-color: var(--teal-light); color: var(--navy); }
+.build-btn:disabled { background: rgba(255,255,255,0.08); color: rgba(255,255,255,0.35); box-shadow: none; }
+.plan { border-radius: 16px; }
+.plan.featured { border-color: var(--teal-light); background: rgba(2,132,199,0.15); }
+.advisor-section { background: linear-gradient(135deg, var(--teal-dark) 0%, var(--navy) 100%); }
+.adv-feat {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: rgba(255,255,255,0.72);
+}
+.av { background: var(--teal-light); color: var(--white); border-color: var(--navy); }
+.av-txt,.af-sub,.af-priv { color: var(--text-mid); }
+.av-txt strong { color: var(--white); }
+.adv-form {
+  background: var(--white);
+  border: none;
+  box-shadow: 0 20px 50px rgba(13,31,45,0.18);
+}
+.af-title,.af-success h4 { color: var(--navy); }
+.fg label { color: var(--navy); }
+.fg input,.fg textarea {
+  background: var(--off-white);
+  border: 1.5px solid var(--border);
+  color: var(--text);
+}
+.fg input:focus,.fg textarea:focus {
+  border-color: var(--teal-light);
+  box-shadow: 0 0 0 3px rgba(56,189,248,0.18);
+}
+.cta-banner {
+  background: var(--teal);
+  color: var(--white);
+}
+.cta-banner h2 { color: var(--white); }
+.cta-banner p { color: rgba(255,255,255,0.75); }
+.btn-dark {
+  background: var(--navy);
+  color: var(--white);
+  border-radius: 8px;
+}
+footer {
+  background: var(--navy);
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+footer p { color: rgba(255,255,255,0.45); }
+footer a { color: var(--teal-light); }
+.menu-toggle {
+  background: transparent;
+  color: var(--white);
+  border-color: rgba(255,255,255,0.25);
+}
+@media(max-width:600px) {
+  .nav-links.open { background: var(--navy); }
+}
+
+/* -- Price card contrast on light bundle section -- */
+.bundle-hero-wrap .price-card {
+  background: linear-gradient(135deg, var(--teal-dark) 0%, var(--navy) 100%);
+  border: 1px solid rgba(56,189,248,0.28);
+  box-shadow: 0 20px 50px rgba(13,31,45,0.18);
+  color: var(--white);
+}
+.bundle-hero-wrap .price-card .pc-badge {
+  background: rgba(56,189,248,0.16);
+  border: 1px solid rgba(56,189,248,0.28);
+  color: #7dd3fc;
+}
+.bundle-hero-wrap .price-card .pc-was,
+.bundle-hero-wrap .price-card .pc-note {
+  color: rgba(255,255,255,0.48);
+}
+.bundle-hero-wrap .price-card .pc-price,
+.bundle-hero-wrap .price-card .pc-list li {
+  color: var(--white);
+}
+.bundle-hero-wrap .price-card .pc-list li::before {
+  color: var(--teal-light);
+}
+.bundle-hero-wrap .price-card .pc-save {
+  background: var(--gold);
+  color: var(--navy);
+}
+
+/* -- Mobile navigation fit and scroll fix -- */
+@media(max-width:600px) {
+  nav {
+    position: relative;
+    top: auto;
+    left: auto;
+    right: auto;
+    width: 100%;
+    height: auto;
+    min-height: 64px;
+    padding: 14px 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0;
+    overflow: visible;
+  }
+  .logo {
+    font-size: 1.25rem;
+    line-height: 1.1;
+    max-width: calc(100% - 58px);
+  }
+  .menu-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: auto;
+    flex: 0 0 42px;
+  }
+  .nav-btn {
+    display: none;
+  }
+  .nav-links {
+    order: 3;
+    flex: 0 0 100%;
+    width: 100%;
+    max-width: 100%;
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    margin-top: 12px;
+    padding: 8px 0;
+    background: transparent !important;
+    border-top: 1px solid rgba(255,255,255,0.12);
+    max-height: min(60vh, 360px);
+    overflow-y: auto;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-links li {
+    width: 100%;
+  }
+  .nav-links a {
+    display: block;
+    width: 100%;
+    padding: 11px 0;
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">Digital<span>Care</span>Pro</div>
+  <ul class="nav-links">
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#jobs">Job Corner</a></li>
+    <li><a href="#custom">Build Bundle</a></li>
+    <li><a href="#advisor">Advisor</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#pricing" class="nav-btn">Get Bundle →</a>
+  <button class="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" onclick="toggleMenu(this)">☰</button>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-mesh"></div>
+  <div class="hero-rings">
+    <div class="ring"></div><div class="ring"></div>
+    <div class="ring"></div><div class="ring"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-pill"><div class="pulse"></div>CPD-accredited training · UK care sector · 2026</div>
+    <h1>The <span class="teal">Digital Care</span><br><span class="dim">Professional</span><br>Bundle</h1>
+    <p class="hero-desc">13 expert-built courses covering cyber security, GDPR, safeguarding, mental health, eMAR, AI tools, and more — practical training to help modern UK care teams stay confident, audit-aware, and ready for digital practice.</p>
+    <div class="hero-ctas">
+      <a href="#pricing" class="btn-glow">Get Full Bundle — £89 ↓</a>
+      <a href="#courses" class="btn-ghost">Browse All 13 Courses →</a>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hstat-num">13<span>×</span></div><div class="hstat-label">CPD-accredited courses</div></div>
+      <div><div class="hstat-num">£<span>89</span></div><div class="hstat-label">Full Bundle Price</div></div>
+      <div><div class="hstat-num">35<span>%</span></div><div class="hstat-label">Saving vs Individual</div></div>
+      <div><div class="hstat-num">18<span>hrs</span></div><div class="hstat-label">Total Learning Time</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-track">
+    <span class="marquee-item">CPD Accredited</span>
+    <span class="marquee-item">CQC-aligned learning</span>
+    <span class="marquee-item">UK GDPR Aligned</span>
+    <span class="marquee-item">Self-Paced Learning</span>
+    <span class="marquee-item">Instant Certificate</span>
+    <span class="marquee-item">Any Device</span>
+    <span class="marquee-item">365-Day Access</span>
+    <span class="marquee-item">Skills for Care Aligned</span>
+    <span class="marquee-item">CPD Accredited</span>
+    <span class="marquee-item">CQC-aligned learning</span>
+    <span class="marquee-item">UK GDPR Aligned</span>
+    <span class="marquee-item">Self-Paced Learning</span>
+    <span class="marquee-item">Instant Certificate</span>
+    <span class="marquee-item">Any Device</span>
+    <span class="marquee-item">365-Day Access</span>
+    <span class="marquee-item">Skills for Care Aligned</span>
+  </div>
+</div>
+
+<!-- BUNDLE OVERVIEW -->
+<section class="section section-light" id="bundle">
+  <div class="bundle-hero-wrap">
+    <div>
+      <div class="label">What's Inside</div>
+      <h2 class="display">One Bundle.<br>Four Pillars of<br>Digital Care.</h2>
+      <p class="lead">We updated this bundle based on live UK market research — adding Safeguarding and Mental Health First Aid (two of the top 3 selling CPD courses in UK care), and refining the course list to match exactly what employers are requiring in 2026.</p>
+      <div class="bundle-pillars">
+        <div class="pillar">
+          <div class="pillar-icon pi-teal">🔐</div>
+          <div>
+            <div class="pillar-name">Cyber Security & Data Compliance — 4 Courses</div>
+            <div class="pillar-desc">GDPR, cyber threats, phishing, and patient data confidentiality. Essential for UK care teams handling personal data and preparing for audits.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon pi-violet">🛡️</div>
+          <div>
+            <div class="pillar-name">Safeguarding & Care Safety — 3 Courses</div>
+            <div class="pillar-desc">Safeguarding Adults, Mental Health First Aid Awareness, and eMAR. The three most employer-demanded care CPD topics in 2026.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon pi-gold">💻</div>
+          <div>
+            <div class="pillar-name">Digital Skills for Care — 4 Courses</div>
+            <div class="pillar-desc">Digital literacy, video consultations, remote monitoring, and AI tools. Future-proofing care workers for the digital NHS.</div>
+          </div>
+        </div>
+        <div class="pillar">
+          <div class="pillar-icon pi-teal">📊</div>
+          <div>
+            <div class="pillar-name">Leadership & Specialist Care — 2 Courses</div>
+            <div class="pillar-desc">Care management tools and digital mental health practice — for senior staff and specialist practitioners.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="price-card">
+      <div class="pc-badge">✦ Full Bundle — Best Value</div>
+      <div class="pc-was">Individual total: £137</div>
+      <div class="pc-price">£89</div>
+      <div class="pc-note">per learner · VAT may apply</div>
+      <div class="pc-save">🎉 Save £48 — 35% OFF</div>
+      <ul class="pc-list">
+        <li>All 13 CPD accredited courses</li>
+        <li>18+ hours of expert content</li>
+        <li>365-day unlimited access</li>
+        <li>Self-paced — no deadlines</li>
+        <li>CQC & ICO compliant content</li>
+        <li>Skills for Care aligned</li>
+      </ul>
+      <a href="#advisor" class="pc-btn">Enrol Now — £89</a>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES -->
+<section class="section courses-section" id="courses">
+  <div class="label">Full Course Breakdown</div>
+  <h2 class="display" style="color:var(--ink)">All 13 Courses<br>in the Bundle</h2>
+  <div class="filters" style="margin-top:1.5rem;">
+    <button class="filter-btn active" onclick="filterCourses('all',this)">All 13</button>
+    <button class="filter-btn teal" onclick="filterCourses('cyber',this)">🔐 Cyber & Data</button>
+    <button class="filter-btn violet" onclick="filterCourses('safety',this)">🛡️ Safeguarding</button>
+    <button class="filter-btn gold" onclick="filterCourses('clinical',this)">💻 Digital Skills</button>
+    <button class="filter-btn" onclick="filterCourses('mental',this)">📊 Leadership</button>
+  </div>
+  <div class="courses-grid" id="courseGrid">
+
+    <div class="course-card cat-cyber" data-cat="cyber">
+      <div class="card-num">01</div>
+      <div class="card-top"><div class="card-emoji ce-teal">🔐</div><div class="card-price">£12</div></div>
+      <div class="card-title">Cyber Security Awareness for Care Staff</div>
+      <div class="card-desc">Equips frontline care staff with practical knowledge to recognise and respond to digital threats — password hygiene, safe device use, and incident reporting. No technical background needed.</div>
+      <div class="card-tags"><span class="ctag ctag-teal">1–2 hrs</span><span class="ctag ctag-teal">All Staff</span><span class="ctag ctag-hot">⭐ Bestseller</span></div>
+    </div>
+
+    <div class="course-card cat-cyber" data-cat="cyber">
+      <div class="card-num">02</div>
+      <div class="card-top"><div class="card-emoji ce-teal">📋</div><div class="card-price">£12</div></div>
+      <div class="card-title">GDPR & Data Protection in Health and Social Care</div>
+      <div class="card-desc">UK GDPR, Data Protection Act 2018, lawful processing, and data subject rights — tailored specifically for health and social care. Aligned with ICO and CQC guidance.</div>
+      <div class="card-tags"><span class="ctag ctag-teal">1.5–2 hrs</span><span class="ctag ctag-teal">CQC Aligned</span><span class="ctag ctag-hot">⭐ Bestseller</span></div>
+    </div>
+
+    <div class="course-card cat-cyber" data-cat="cyber">
+      <div class="card-num">03</div>
+      <div class="card-top"><div class="card-emoji ce-teal">🔒</div><div class="card-price">£10</div></div>
+      <div class="card-title">Safe Use of Patient Data & Confidentiality</div>
+      <div class="card-desc">Caldicott Principles, duty of confidentiality, and information sharing protocols. Real-world scenarios every care worker faces in daily practice.</div>
+      <div class="card-tags"><span class="ctag ctag-teal">1 hr</span><span class="ctag ctag-teal">All Roles</span></div>
+    </div>
+
+    <div class="course-card cat-cyber" data-cat="cyber">
+      <div class="card-num">04</div>
+      <div class="card-top"><div class="card-emoji ce-teal">🎣</div><div class="card-price">£10</div></div>
+      <div class="card-title">Phishing & Social Engineering Awareness</div>
+      <div class="card-desc">The most common cause of NHS data breaches. Staff learn to spot suspicious emails, fraudulent calls, and manipulation tactics — with hands-on red-flag exercises.</div>
+      <div class="card-tags"><span class="ctag ctag-teal">1 hr</span><span class="ctag ctag-hot">🔥 High Demand</span></div>
+    </div>
+
+    <div class="course-card cat-safety" data-cat="safety">
+      <div class="card-num">05</div>
+      <div class="card-top"><div class="card-emoji ce-violet">🛡️</div><div class="card-price">£12</div></div>
+      <div class="card-title">Safeguarding Adults in Care Settings</div>
+      <div class="card-desc">NEW — Added 2026. A high-priority care training topic that supports inspection readiness. Covers the Care Act 2014, types of abuse, reporting procedures, and duty of care obligations.</div>
+      <div class="card-tags"><span class="ctag ctag-violet">1.5 hrs</span><span class="ctag ctag-violet">CQC Aligned</span><span class="ctag ctag-new">🆕 New</span></div>
+    </div>
+
+    <div class="course-card cat-safety" data-cat="safety">
+      <div class="card-num">06</div>
+      <div class="card-top"><div class="card-emoji ce-violet">🧠</div><div class="card-price">£12</div></div>
+      <div class="card-title">Mental Health First Aid Awareness</div>
+      <div class="card-desc">NEW — Added 2026. One of the top 3 selling CPD courses on Reed. Equips all care staff to recognise early signs of mental health crisis, provide initial support, and signpost to professional help.</div>
+      <div class="card-tags"><span class="ctag ctag-violet">1.5 hrs</span><span class="ctag ctag-violet">All Staff</span><span class="ctag ctag-hot">⭐ Top Seller</span></div>
+    </div>
+
+    <div class="course-card cat-safety" data-cat="safety">
+      <div class="card-num">07</div>
+      <div class="card-top"><div class="card-emoji ce-violet">💊</div><div class="card-price">£14</div></div>
+      <div class="card-title">Electronic Medication Administration Records (eMAR)</div>
+      <div class="card-desc">Introduces care staff to eMAR systems in line with UK healthcare legislation — accurate digital medication recording, error prevention, and audit compliance.</div>
+      <div class="card-tags"><span class="ctag ctag-violet">2 hrs</span><span class="ctag ctag-hot">⭐ Bestseller</span></div>
+    </div>
+
+    <div class="course-card cat-clinical" data-cat="clinical">
+      <div class="card-num">08</div>
+      <div class="card-top"><div class="card-emoji ce-gold">💻</div><div class="card-price">£9</div></div>
+      <div class="card-title">Digital Literacy for Care Workers (Beginner)</div>
+      <div class="card-desc">Builds digital confidence for day-to-day care work — devices, basic software, digital care records, and online safety. Designed for learners with zero IT experience.</div>
+      <div class="card-tags"><span class="ctag ctag-gold">2 hrs</span><span class="ctag ctag-gold">Beginner</span><span class="ctag ctag-gold">No IT Needed</span></div>
+    </div>
+
+    <div class="course-card cat-clinical" data-cat="clinical">
+      <div class="card-num">09</div>
+      <div class="card-top"><div class="card-emoji ce-gold">🎥</div><div class="card-price">£10</div></div>
+      <div class="card-title">Video Consultation Skills for Healthcare Staff</div>
+      <div class="card-desc">Professional virtual appointments — platform etiquette, safeguarding in remote settings, supporting patients with low digital confidence, and maintaining clinical standards online.</div>
+      <div class="card-tags"><span class="ctag ctag-gold">1 hr</span><span class="ctag ctag-gold">Clinical Staff</span></div>
+    </div>
+
+    <div class="course-card cat-clinical" data-cat="clinical">
+      <div class="card-num">10</div>
+      <div class="card-top"><div class="card-emoji ce-gold">📡</div><div class="card-price">£10</div></div>
+      <div class="card-title">Remote Monitoring Technology in Care</div>
+      <div class="card-desc">Wearables, sensors, and remote monitoring transforming UK care — interpreting alerts, ethical and consent considerations, and supporting person-centred care through technology.</div>
+      <div class="card-tags"><span class="ctag ctag-gold">1.5 hrs</span><span class="ctag ctag-gold">Care Settings</span></div>
+    </div>
+
+    <div class="course-card cat-clinical" data-cat="clinical">
+      <div class="card-num">11</div>
+      <div class="card-top"><div class="card-emoji ce-gold">🤖</div><div class="card-price">£12</div></div>
+      <div class="card-title">Introduction to AI Tools for Healthcare Administrators</div>
+      <div class="card-desc">Demystifies AI for healthcare administrators — what tools actually do, responsible use, data privacy, and practical UK care setting examples. No technical background needed.</div>
+      <div class="card-tags"><span class="ctag ctag-gold">1.5 hrs</span><span class="ctag ctag-new">🆕 Trending</span></div>
+    </div>
+
+    <div class="course-card cat-mental" data-cat="mental">
+      <div class="card-num">12</div>
+      <div class="card-top"><div class="card-emoji ce-rose">🧠</div><div class="card-price">£10</div></div>
+      <div class="card-title">Digital Tools for Mental Health Practitioners</div>
+      <div class="card-desc">Apps, teletherapy platforms, digital care planning, and online peer support for mental health practitioners — including ethical boundaries, digital safeguarding, and supporting clients with low tech confidence.</div>
+      <div class="card-tags"><span class="ctag ctag-rose">2 hrs</span><span class="ctag ctag-rose">MH Practitioners</span></div>
+    </div>
+
+    <div class="course-card cat-mental" data-cat="mental">
+      <div class="card-num">13</div>
+      <div class="card-top"><div class="card-emoji ce-rose">📊</div><div class="card-price">£14</div></div>
+      <div class="card-title">Care Management: Digital Planning & Reporting</div>
+      <div class="card-desc">Replaces standalone spreadsheets course — a broader, more valuable module covering digital care planning systems, audit reporting tools, rota management software, and data-driven care quality management for managers.</div>
+      <div class="card-tags"><span class="ctag ctag-rose">1.5 hrs</span><span class="ctag ctag-rose">Managers</span><span class="ctag ctag-new">🆕 Updated</span></div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRICING TABLE -->
+<section class="section section-white" id="compare">
+  <div class="label">Transparent Pricing</div>
+  <h2 class="display">Individual vs Bundle</h2>
+  <p class="lead">Every course available individually — or save 35% with the full bundle.</p>
+  <div class="table-wrap" style="margin-top:2.5rem;">
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th style="width:4px;padding:0;"></th>
+          <th>#</th><th>Course</th><th>Category</th><th>Duration</th><th>Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td class="cat-strip c1"></td><td>01</td><td class="td-name">Cyber Security Awareness for Care Staff</td><td><span class="ctag ctag-teal">Cyber</span></td><td>1–2 hrs</td><td class="td-price">£12</td></tr>
+        <tr><td class="cat-strip c1"></td><td>02</td><td class="td-name">GDPR & Data Protection in Health and Social Care</td><td><span class="ctag ctag-teal">Cyber</span></td><td>1.5–2 hrs</td><td class="td-price">£12</td></tr>
+        <tr><td class="cat-strip c1"></td><td>03</td><td class="td-name">Safe Use of Patient Data & Confidentiality</td><td><span class="ctag ctag-teal">Cyber</span></td><td>1 hr</td><td class="td-price">£10</td></tr>
+        <tr><td class="cat-strip c1"></td><td>04</td><td class="td-name">Phishing & Social Engineering Awareness</td><td><span class="ctag ctag-teal">Cyber</span></td><td>1 hr</td><td class="td-price">£10</td></tr>
+        <tr><td class="cat-strip c2"></td><td>05</td><td class="td-name">Safeguarding Adults in Care Settings 🆕</td><td><span class="ctag ctag-violet">Safeguarding</span></td><td>1.5 hrs</td><td class="td-price">£12</td></tr>
+        <tr><td class="cat-strip c2"></td><td>06</td><td class="td-name">Mental Health First Aid Awareness 🆕</td><td><span class="ctag ctag-violet">Safeguarding</span></td><td>1.5 hrs</td><td class="td-price">£12</td></tr>
+        <tr><td class="cat-strip c2"></td><td>07</td><td class="td-name">eMAR Training</td><td><span class="ctag ctag-violet">Safeguarding</span></td><td>2 hrs</td><td class="td-price">£14</td></tr>
+        <tr><td class="cat-strip c3"></td><td>08</td><td class="td-name">Digital Literacy for Care Workers</td><td><span class="ctag ctag-gold">Digital</span></td><td>2 hrs</td><td class="td-price">£9</td></tr>
+        <tr><td class="cat-strip c3"></td><td>09</td><td class="td-name">Video Consultation Skills for Healthcare Staff</td><td><span class="ctag ctag-gold">Digital</span></td><td>1 hr</td><td class="td-price">£10</td></tr>
+        <tr><td class="cat-strip c3"></td><td>10</td><td class="td-name">Remote Monitoring Technology in Care</td><td><span class="ctag ctag-gold">Digital</span></td><td>1.5 hrs</td><td class="td-price">£10</td></tr>
+        <tr><td class="cat-strip c3"></td><td>11</td><td class="td-name">Introduction to AI Tools for Healthcare Administrators</td><td><span class="ctag ctag-gold">Digital</span></td><td>1.5 hrs</td><td class="td-price">£12</td></tr>
+        <tr><td class="cat-strip c4"></td><td>12</td><td class="td-name">Digital Tools for Mental Health Practitioners</td><td><span class="ctag ctag-rose">Leadership</span></td><td>2 hrs</td><td class="td-price">£10</td></tr>
+        <tr><td class="cat-strip c4"></td><td>13</td><td class="td-name">Care Management: Digital Planning & Reporting 🆕</td><td><span class="ctag ctag-rose">Leadership</span></td><td>1.5 hrs</td><td class="td-price">£14</td></tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="4">Digital Care Professional Bundle — All 13 Courses</td>
+          <td>18+ hrs</td>
+          <td><span class="strike">£137</span><strong>£89</strong><span class="save-tag">Save £48</span></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="section section-dark" id="who">
+  <div class="label">Who It's For</div>
+  <h2 class="display">Built for Every Role<br>in UK Care</h2>
+  <p class="lead lead-dark">From frontline care workers to NHS administrators — there's a course in this bundle made for your exact role.</p>
+  <div class="who-grid">
+    <div class="who-card"><span class="who-icon">🏥</span><h3>Frontline Care Workers</h3><p>Courses 1–4 and 6–8 are built for you. Build digital confidence, stay GDPR compliant, recognise mental health crises, and protect patient data from day one.</p></div>
+    <div class="who-card"><span class="who-icon">👩‍💼</span><h3>Care Home Managers</h3><p>Courses 7, 10 & 13 give you the tools to oversee eMAR systems, manage remote monitoring, and run your home more efficiently with digital planning tools.</p></div>
+    <div class="who-card"><span class="who-icon">🏢</span><h3>NHS & Care Organisations</h3><p>Team and organisational licences to train entire departments. Courses are aligned with CQC, ICO, and Skills for Care expectations — ideal for inspection readiness.</p></div>
+    <div class="who-card"><span class="who-icon">💬</span><h3>Mental Health Practitioners</h3><p>Courses 6, 12 built specifically for you — digital care planning, teletherapy, safeguarding, and supporting clients with low digital confidence.</p></div>
+    <div class="who-card"><span class="who-icon">🖥️</span><h3>Healthcare Administrators</h3><p>Courses 2, 9, 11 & 13 — GDPR, video consultations, AI tools, and digital reporting. The modern healthcare office toolkit in one purchase.</p></div>
+    <div class="who-card"><span class="who-icon">📚</span><h3>Students & Career Changers</h3><p>Add real CPD value to your CV. These courses demonstrate digital competence to future employers — from NHS trusts to private care providers across the UK.</p></div>
+  </div>
+</section>
+
+<!-- JOB CORNER -->
+<section class="section jobs-section" id="jobs">
+  <div class="label">Career Outcomes</div>
+  <h2 class="display" style="color:var(--ink)">Job Corner</h2>
+  <p class="lead">Real UK roles hiring right now — with 2026 salary data from Indeed, Glassdoor, and NHS Jobs.</p>
+  <div class="jobs-stats">
+    <div class="jstat"><div class="jstat-num"><em>£28k</em></div><div class="jstat-label">Median UK health & social care salary (2026)</div></div>
+    <div class="jstat violet"><div class="jstat-num"><em>131+</em></div><div class="jstat-label">Open data protection & IG roles in UK healthcare</div></div>
+    <div class="jstat gold"><div class="jstat-num"><em>↑35%</em></div><div class="jstat-label">Salary uplift for care workers with digital specialist skills</div></div>
+  </div>
+  <div class="jobs-grid">
+    <div class="job-card"><div class="job-top"><div class="job-icon">🔐</div><div class="job-sal">£30k–£45k</div></div><div class="job-title">Information Governance & Data Protection Officer</div><div class="job-desc">Ensures NHS trusts and care organisations comply with UK GDPR. Oversees data breaches, subject access requests, and staff training.</div><div class="job-tags"><span class="job-tag">NHS Bands 5–7</span><span class="job-tag">NHS / Private</span></div><div class="job-courses-lbl">Relevant Courses</div><div class="job-courses-txt">GDPR · Patient Data · Cyber Security · Phishing</div></div>
+    <div class="job-card"><div class="job-top"><div class="job-icon">🛡️</div><div class="job-sal">£26k–£36k</div></div><div class="job-title">Safeguarding Lead / Designated Officer</div><div class="job-desc">Manages safeguarding procedures across a care organisation. Conducts enquiries, trains staff, and liaises with local authorities and CQC inspectors.</div><div class="job-tags"><span class="job-tag">Care Homes</span><span class="job-tag">NHS Community</span></div><div class="job-courses-lbl">Relevant Courses</div><div class="job-courses-txt">Safeguarding Adults · Mental Health First Aid · GDPR</div></div>
+    <div class="job-card"><div class="job-top"><div class="job-icon">💊</div><div class="job-sal">£28k–£40k</div></div><div class="job-title">eMAR & Medicines Management Lead</div><div class="job-desc">Oversees electronic medication administration systems, trains staff, and audits compliance with pharmacies and CQC inspectors.</div><div class="job-tags"><span class="job-tag">Care Homes</span><span class="job-tag">Growing Role</span></div><div class="job-courses-lbl">Relevant Courses</div><div class="job-courses-txt">eMAR Training · Digital Literacy · GDPR · Patient Data</div></div>
+    <div class="job-card"><div class="job-top"><div class="job-icon">🖥️</div><div class="job-sal">£24k–£35k</div></div><div class="job-title">Healthcare Administrator (Digital)</div><div class="job-desc">Manages patient records, scheduling, and digital workflows within GP surgeries, NHS trusts, or private clinics.</div><div class="job-tags"><span class="job-tag">GP Surgeries</span><span class="job-tag">NHS Trusts</span></div><div class="job-courses-lbl">Relevant Courses</div><div class="job-courses-txt">AI Tools · Care Management · Video Consultations · GDPR</div></div>
+    <div class="job-card"><div class="job-top"><div class="job-icon">🧠</div><div class="job-sal">£24k–£38k</div></div><div class="job-title">Digital Mental Health Practitioner</div><div class="job-desc">Delivers support via teletherapy platforms and remote digital interventions. Fast-growing since NHS England's digital mental health expansion.</div><div class="job-tags"><span class="job-tag">NHS IAPT</span><span class="job-tag">Charities</span></div><div class="job-courses-lbl">Relevant Courses</div><div class="job-courses-txt">Digital MH Tools · Mental Health First Aid · Video Consultations</div></div>
+    <div class="job-card"><div class="job-top"><div class="job-icon">🏥</div><div class="job-sal">£28k–£42k</div></div><div class="job-title">Care Home Digital Lead</div><div class="job-desc">Emerging role in larger care organisations — rolling out digital tools, training staff on new systems, and ensuring CQC digital compliance.</div><div class="job-tags"><span class="job-tag">Care Homes</span><span class="job-tag">Group Providers</span></div><div class="job-courses-lbl">Relevant Courses</div><div class="job-courses-txt">All 13 courses — this role uses the full digital skill set</div></div>
+  </div>
+  <div class="sal-note"><strong>ℹ️ Salary Disclaimer:</strong> All figures are approximate ranges sourced from Indeed, Glassdoor, and NHS Jobs (2026). Actual salaries vary by employer, location, and experience. This bundle supports career development but does not guarantee employment or a specific salary.</div>
+</section>
+
+<!-- CUSTOM BUILDER -->
+<section class="section builder-section" id="custom">
+  <div class="builder-wrap">
+    <div class="builder-info">
+      <div class="label">Build Your Own</div>
+      <h2 class="display">Only Need<br>Certain Courses?</h2>
+      <p class="lead lead-dark">Pick exactly what you need — pay only for those. Automatic discounts unlock as you add more courses.</p>
+      <div class="builder-perks">
+        <div class="bperk"><div class="bperk-icon">🎯</div><div><h4>Any Combination</h4><p>Mix freely across all 4 pillars. No minimum — total flexibility for individuals and employers.</p></div></div>
+        <div class="bperk"><div class="bperk-icon">💰</div><div><h4>Tiered Discounts</h4><p>3–5 courses = 10% off · 6–10 courses = 20% off · All 13 = 35% off with full bundle.</p></div></div>
+        <div class="bperk"><div class="bperk-icon">🏢</div><div><h4>Employer Friendly</h4><p>Buy exactly what each team needs. GDPR + Cyber for admin staff. eMAR + Safeguarding for clinical staff.</p></div></div>
+      </div>
+    </div>
+    <div class="builder-card">
+      <div class="builder-head">
+        <h3>Select Your Courses</h3>
+        <div class="counter" id="bCounter">0 selected</div>
+      </div>
+      <div class="legend">
+        <span><span class="ldot" style="background:var(--teal)"></span>Cyber & Data</span>
+        <span><span class="ldot" style="background:var(--violet)"></span>Safeguarding</span>
+        <span><span class="ldot" style="background:var(--gold)"></span>Digital Skills</span>
+        <span><span class="ldot" style="background:var(--rose)"></span>Leadership</span>
+      </div>
+      <div class="picker-list">
+        <div class="picker" role="button" tabindex="0" aria-pressed="false" data-price="12" onclick="bToggle(this)"><div class="pcheck"></div><div class="pdot c"></div><div class="pname">🔐 Cyber Security Awareness</div><div class="pprice">£12</div></div>
+        <div class="picker" role="button" tabindex="0" aria-pressed="false" data-price="12" onclick="bToggle(this)"><div class="pcheck"></div><div class="pdot c"></div><div class="pname">📋 GDPR & Data Protection</div><div class="pprice">£12</div></div>
+        <div class="picker" role="button" tabindex="0" aria-pressed="false" data-price="10" onclick="bToggle(this)"><div class="pcheck"></div><div class="pdot c"></div><div class="pname">🔒 Safe Use of Patient Data</div><div class="pprice">£10</div></div>
+        <div class="picker" role="button" tabindex="0" aria-pressed="false" data-price="10" onclick="bToggle(this)"><div class="pcheck"></div><div class="pdot c"></div><div class="pname">🎣 Phishing Awareness</div><div class="pprice">£10</div></div>
+        <div class="picker" role="button" tabindex="0" aria-pressed="false" data-price="12" onclick="bToggle(this)"><div class="pcheck"></div><div class="pdot s"></div><div class="pname">🛡️ Safeguarding Adults 🆕</div><div class="pprice">£12</div></div>
+        <div class="picker" role="button" tabindex="0" aria-pressed="false" data-price="12" onclick="bToggle(this)"><div class="pcheck"></div><div class="pdot s"></div><div class="pname">🧠 Mental Health First Aid 🆕</div><div class="pprice">£12</div></div>
+        <div class="picker" role="button" tabindex="0" aria-pressed="false" data-price="14" onclick="bToggle(this)"><div class="pcheck"></div><div class="pdot s"></div><div class="pname">💊 eMAR Training</div><div class="pprice">£14</div></div>
+        <div class="picker" role="button" tabindex="0" aria-pressed="false" data-price="9" onclick="bToggle(this)"><div class="pcheck"></div><div class="pdot" style="background:var(--gold)"></div><div class="pname">💻 Digital Literacy</div><div class="pprice">£9</div></div>
+        <div class="picker" role="button" tabindex="0" aria-pressed="false" data-price="10" onclick="bToggle(this)"><div class="pcheck"></div><div class="pdot" style="background:var(--gold)"></div><div class="pname">🎥 Video Consultations</div><div class="pprice">£10</div></div>
+        <div class="picker" role="button" tabindex="0" aria-pressed="false" data-price="10" onclick="bToggle(this)"><div class="pcheck"></div><div class="pdot" style="background:var(--gold)"></div><div class="pname">📡 Remote Monitoring</div><div class="pprice">£10</div></div>
+        <div class="picker" role="button" tabindex="0" aria-pressed="false" data-price="12" onclick="bToggle(this)"><div class="pcheck"></div><div class="pdot" style="background:var(--gold)"></div><div class="pname">🤖 AI Tools for Administrators</div><div class="pprice">£12</div></div>
+        <div class="picker" role="button" tabindex="0" aria-pressed="false" data-price="10" onclick="bToggle(this)"><div class="pcheck"></div><div class="pdot" style="background:var(--rose)"></div><div class="pname">🧠 Digital MH Tools</div><div class="pprice">£10</div></div>
+        <div class="picker" role="button" tabindex="0" aria-pressed="false" data-price="14" onclick="bToggle(this)"><div class="pcheck"></div><div class="pdot" style="background:var(--rose)"></div><div class="pname">📊 Care Management & Reporting 🆕</div><div class="pprice">£14</div></div>
+      </div>
+      <div class="bsum">
+        <div class="brow"><span>Subtotal</span><span id="bSub">£0.00</span></div>
+        <div class="brow" id="bDiscRow" style="display:none"><span id="bDiscLbl">Discount</span><span class="saving" id="bDiscAmt">-£0.00</span></div>
+        <div class="brow btotal"><span>Total</span><span id="bTotal">£0.00</span></div>
+      </div>
+      <button class="build-btn" id="bBtn" disabled>Select at least 1 course</button>
+      <div class="bnote" id="bNote">💡 3+ courses = 10% off · 6+ = 20% off · All 13 = 35% off</div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING PLANS -->
+<section class="section plans-section" id="pricing">
+  <div class="label">Flexible Plans</div>
+  <h2 class="display">Plans for Every Size</h2>
+  <p class="lead lead-dark">One learner or a 500-person organisation — we have a plan that works.</p>
+  <div class="plans-grid">
+    <div class="plan">
+      <div class="plan-name">Individual</div>
+      <div class="plan-price"><sup>£</sup>89</div>
+      <div class="plan-note">Per learner · One-time · 365-day access</div>
+      <ul class="plan-feats">
+        <li>All 13 CPD accredited courses</li>
+        <li>18+ hours of content</li>
+        <li>Self-paced learning</li>
+        <li>Any device, anytime</li>
+        <li>365-day access</li>
+      </ul>
+      <a href="#advisor" class="plan-btn plan-btn-outline">Enrol as Individual</a>
+    </div>
+    <div class="plan featured">
+      <div class="plan-badge">Most Popular</div>
+      <div class="plan-name">Team</div>
+      <div class="plan-price"><sup>£</sup>379</div>
+      <div class="plan-note">Up to 10 staff · One-time · Lifetime access</div>
+      <ul class="plan-feats">
+        <li>Everything in Individual</li>
+        <li>Up to 10 team members</li>
+        <li>Priority email support</li>
+        <li>5 free PDF certificates for any five courses for all team members</li>
+        <li>5 free PDF transcripts for any five courses for all team members</li>
+        <li>Lifetime access to all courses for all team members</li>
+      </ul>
+      <a href="#advisor" class="plan-btn plan-btn-primary">Enrol Your Team</a>
+    </div>
+    <div class="plan">
+      <div class="plan-name">Organisation</div>
+      <div class="plan-price"><sup>£</sup>849</div>
+      <div class="plan-note">Unlimited staff · Annual licence</div>
+      <ul class="plan-feats">
+        <li>Everything in Team</li>
+        <li>Full LMS admin dashboard</li>
+        <li>Dedicated account manager</li>
+        <li>Free PDF certificates for all courses for 15 team members</li>
+        <li>Free PDF transcripts for all courses for 15 team members</li>
+        <li>Lifetime access to all courses for all team members</li>
+      </ul>
+      <a href="#advisor" class="plan-btn plan-btn-outline">Contact for Licence</a>
+    </div>
+  </div>
+</section>
+
+<!-- STUDENT ADVISOR -->
+<section class="section advisor-section" id="advisor">
+  <div class="advisor-blob"></div>
+  <div class="advisor-grid">
+    <div class="adv-left">
+      <div class="label">Free Guidance</div>
+      <h2 class="display">Not Sure Which<br>Courses Are Right?</h2>
+      <p class="lead lead-dark">Our student advisors are here to help — whether you're an individual learner, a care home manager, or an HR lead buying for a large team.</p>
+      <div class="adv-feats">
+        <div class="adv-feat">Free 1-to-1 course guidance session</div>
+        <div class="adv-feat">Help choosing the right bundle or custom combination</div>
+        <div class="adv-feat">Advice on team and organisational licences</div>
+        <div class="adv-feat">CQC inspection readiness checklist included</div>
+        <div class="adv-feat">Response within 1 working day</div>
+      </div>
+      <div class="adv-avs">
+        <div class="av-stack">
+          <div class="av">👩</div><div class="av">👨</div><div class="av">👩</div>
+        </div>
+        <div class="av-txt"><strong>Our Student Advisors</strong>Available Mon–Fri, 9am–5pm UK time</div>
+      </div>
+    </div>
+    <div class="adv-form">
+      <div id="afContent">
+        <div class="af-title">Talk to a Student Advisor</div>
+        <div class="af-sub">Fill in the form and we'll get back to you within 1 working day with personalised recommendations.</div>
+        <div class="fg"><label>Full Name *</label><input type="text" id="afName" placeholder="e.g. Sarah Johnson"></div>
+        <div class="fg"><label>Email Address *</label><input type="email" id="afEmail" placeholder="e.g. sarah@carehome.co.uk"></div>
+        <div class="fg"><label>Phone Number *</label><input type="tel" id="afPhone" placeholder="e.g. 07700 900000"></div>
+        <div class="fg"><label>Your Question or Message</label><textarea id="afMsg" placeholder="e.g. I manage a care home of 20 staff and need GDPR and safeguarding training — which option is best for us?"></textarea></div>
+        <button class="af-btn" type="button" onclick="afSubmit()">Send My Enquiry →</button>
+        <div class="af-priv">🔒 Your details are kept private. UK GDPR compliant.</div>
+      </div>
+      <div class="af-success" id="afSuccess">
+        <span class="si">✅</span>
+        <h4>Enquiry Received!</h4>
+        <p>Thank you! One of our student advisors will reply to your email within 1 working day with personalised course recommendations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+  <div class="label">Common Questions</div>
+  <h2 class="display" style="color:var(--ink)">Frequently Asked<br>Questions</h2>
+  <div class="faq-grid">
+    <div class="faq-item"><h4>Are these courses CPD accredited?</h4><p>Yes. The courses are designed for CPD learning and aligned with common CQC, ICO, and Skills for Care expectations for UK health and social care training.</p></div>
+    <div class="faq-item"><h4>Why were Safeguarding and Mental Health First Aid added?</h4><p>Both are high-priority topics in many UK care settings. We added them because employers often ask for stronger safeguarding and mental health awareness evidence during onboarding, supervision, and audit preparation.</p></div>
+    <div class="faq-item"><h4>Will I receive a certificate?</h4><p>Yes. You receive an instant digital CPD certificate on completion of each course, downloadable as a PDF for your employment records or CQC staff files.</p></div>
+    <div class="faq-item"><h4>How long do I have access?</h4><p>365 days from the date of purchase. All courses are fully self-paced — start and stop whenever suits you, with no time pressure.</p></div>
+    <div class="faq-item"><h4>Can I access on mobile or tablet?</h4><p>Absolutely. All courses are fully responsive and work on any device — smartphone, tablet, laptop, or desktop. Learn anywhere, anytime.</p></div>
+    <div class="faq-item"><h4>Can my employer buy for the whole team?</h4><p>Yes. Team licences cover up to 10 staff (£379), while organisation licences (£849) include certificate and transcript options for 15 team members plus lifetime course access.</p></div>
+    <div class="faq-item"><h4>Is this CQC aligned?</h4><p>The content is built to support CQC inspection readiness and is aligned with relevant guidance including UK GDPR, the Data Protection Act 2018, the Care Act 2014, and NHS Digital data security principles.</p></div>
+    <div class="faq-item"><h4>Can I buy individual courses instead?</h4><p>Yes — every course is available individually. The bundle saves you 35% versus buying separately, and the custom builder lets you pick any combination with automatic discounts.</p></div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <h2>Ready to Upskill<br>Your Care Team?</h2>
+  <p>Join care workers, managers, and NHS professionals across the UK building digital confidence with CPD-accredited training.</p>
+  <div class="cta-btns">
+    <a href="#advisor" class="btn-dark">Get the Full Bundle — £89</a>
+    <a href="#courses" class="btn-light">Browse All 13 Courses</a>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 DigitalCarePro · CPD Accredited Online Training for Health & Social Care · UK · <a href="/privacy">Privacy Policy</a> · <a href="/terms">Terms</a> · <a href="mailto:hello@digitalcarepro.co.uk">Contact</a></p>
+</footer>
+
+<script>
+// ── MOBILE MENU ──
+function toggleMenu(btn) {
+  const links = document.querySelector('.nav-links');
+  const open = links.classList.toggle('open');
+  btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+  btn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+}
+document.querySelectorAll('.nav-links a').forEach(link => {
+  link.addEventListener('click', () => {
+    const links = document.querySelector('.nav-links');
+    const btn = document.querySelector('.menu-toggle');
+    links.classList.remove('open');
+    if(btn) {
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Open menu');
+    }
+  });
+});
+document.querySelectorAll('.picker').forEach(item => {
+  item.addEventListener('keydown', e => {
+    if(e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      bToggle(item);
+    }
+  });
+});
+
+// ── COURSE FILTER ──
+function filterCourses(cat, btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active','teal','violet','gold'));
+  btn.classList.add('active');
+  if(cat !== 'all') btn.classList.add(cat === 'cyber' ? 'teal' : cat === 'safety' ? 'violet' : cat === 'clinical' ? 'gold' : '');
+  document.querySelectorAll('.course-card').forEach(c => {
+    c.style.display = (cat === 'all' || c.dataset.cat === cat) ? 'block' : 'none';
+  });
+}
+
+// ── BUNDLE BUILDER ──
+function bToggle(el) {
+  el.classList.toggle('on');
+  const selected = el.classList.contains('on');
+  el.setAttribute('aria-pressed', selected ? 'true' : 'false');
+  el.querySelector('.pcheck').textContent = selected ? '✓' : '';
+  bUpdate();
+}
+function bUpdate() {
+  const all = document.querySelectorAll('.picker');
+  let count = 0, sub = 0;
+  all.forEach(el => { if(el.classList.contains('on')) { count++; sub += parseFloat(el.dataset.price); } });
+  let pct = 0, lbl = '';
+  if(count === 13) { pct = 35; lbl = '35% full bundle discount'; }
+  else if(count >= 6) { pct = 20; lbl = '20% multi-course discount'; }
+  else if(count >= 3) { pct = 10; lbl = '10% multi-course discount'; }
+  const disc = sub * (pct / 100);
+  const total = sub - disc;
+  const ctr = document.getElementById('bCounter');
+  ctr.textContent = count === 0 ? '0 selected' : `${count} course${count>1?'s':''} selected`;
+  ctr.className = count > 0 ? 'counter active' : 'counter';
+  document.getElementById('bSub').textContent = '\u00a3' + sub.toFixed(2);
+  document.getElementById('bTotal').textContent = count > 0 ? '\u00a3' + total.toFixed(2) : '\u00a30.00';
+  const dr = document.getElementById('bDiscRow');
+  if(pct > 0) {
+    dr.style.display = 'flex';
+    document.getElementById('bDiscLbl').textContent = lbl;
+    document.getElementById('bDiscAmt').textContent = '-\u00a3' + disc.toFixed(2);
+  } else { dr.style.display = 'none'; }
+  const btn = document.getElementById('bBtn');
+  const note = document.getElementById('bNote');
+  if(count === 0) { btn.disabled = true; btn.textContent = 'Select at least 1 course'; note.textContent = '\u{1F4A1} 3+ courses = 10% off \u00b7 6+ = 20% off \u00b7 All 13 = 35% off'; }
+  else if(count === 13) { btn.disabled = false; btn.textContent = `Enrol in Full Bundle \u2014 \u00a3${total.toFixed(2)} (35% saved!)`; note.textContent = '\u{1F389} All 13 selected \u2014 maximum saving!'; }
+  else {
+    btn.disabled = false;
+    const s = pct > 0 ? ` (${pct}% off)` : '';
+    btn.textContent = `Enrol in ${count} Course${count>1?'s':''} \u2014 \u00a3${total.toFixed(2)}${s}`;
+    if(count < 3) note.textContent = `\u{1F4A1} Add ${3-count} more to unlock 10% discount`;
+    else if(count < 6) note.textContent = `\u{1F4A1} Add ${6-count} more to unlock 20% discount`;
+    else note.textContent = `\u{1F4A1} Add ${13-count} more courses for the full bundle at 35% off`;
+  }
+}
+
+// ── ADVISOR FORM ──
+function afSubmit() {
+  const n = document.getElementById('afName').value.trim();
+  const e = document.getElementById('afEmail').value.trim();
+  const p = document.getElementById('afPhone').value.trim();
+  const m = document.getElementById('afMsg').value.trim();
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(e);
+  if(!n || !e || !p) { alert('Please fill in your full name, email, and phone number.'); return; }
+  if(!emailOk) { alert('Please enter a valid email address.'); return; }
+  const subject = encodeURIComponent('Digital Care Pro course enquiry');
+  const body = encodeURIComponent('Name: ' + n + '\nEmail: ' + e + '\nPhone: ' + p + '\n\nMessage:\n' + (m || 'No message provided.'));
+  window.location.href = 'mailto:hello@digitalcarepro.co.uk?subject=' + subject + '&body=' + body;
+  document.getElementById('afContent').style.display = 'none';
+  document.getElementById('afSuccess').style.display = 'block';
+}
+
+// ── SCROLL REVEAL ──
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } });
+}, { threshold: 0.08 });
+document.querySelectorAll('.course-card,.who-card,.job-card,.plan,.faq-item,.pillar,.jstat').forEach(el => {
+  el.style.opacity='0'; el.style.transform='translateY(24px)'; el.style.transition='opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+</script>
+</body>
+</html>
