@@ -1,0 +1,1761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Digital Care Pro Bundle | CPD Accredited Online Training</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;1,300&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --teal: #0284c7;
+    --teal-light: #38bdf8;
+    --teal-dark: #0369a1;
+    --mint: #e0f5ff;
+    --navy: #0c2d48;
+    --navy-mid: #1a4a6b;
+    --gold: #f59e0b;
+    --gold-light: #fef3c7;
+    --white: #ffffff;
+    --off-white: #f0faff;
+    --text: #0c2d48;
+    --text-light: #4a7a99;
+    --border: #bae6fd;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Source Sans 3', sans-serif;
+    background: var(--off-white);
+    color: var(--text);
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(12,45,72,0.97);
+    backdrop-filter: blur(12px);
+    padding: 0 5%;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .nav-logo {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800; font-size: 1.2rem;
+    color: var(--white);
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--teal-light); }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a {
+    color: rgba(255,255,255,0.7); text-decoration: none;
+    font-size: 0.88rem; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: var(--teal-light); color: var(--white);
+    padding: 0.5rem 1.2rem; border-radius: 6px;
+    font-size: 0.88rem; font-weight: 600;
+    text-decoration: none; transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--teal); }
+
+  /* ── HERO ── */
+  .hero {
+    min-height: 100vh;
+    background: var(--navy);
+    display: flex; align-items: center;
+    position: relative; overflow: hidden;
+    padding: 100px 5% 60px;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      radial-gradient(ellipse 60% 70% at 80% 50%, rgba(2,132,199,0.18) 0%, transparent 60%),
+      radial-gradient(ellipse 40% 50% at 10% 80%, rgba(2,132,199,0.12) 0%, transparent 50%);
+  }
+  .hero-grid {
+    position: absolute; inset: 0; opacity: 0.04;
+    background-image: linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px),
+                      linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-content {
+    position: relative; z-index: 2;
+    max-width: 700px;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 0.5rem;
+    background: rgba(2,132,199,0.2);
+    border: 1px solid rgba(2,132,199,0.4);
+    color: #7dd3fc; padding: 0.4rem 1rem;
+    border-radius: 100px; font-size: 0.8rem; font-weight: 600;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    margin-bottom: 1.8rem;
+    animation: fadeUp 0.6s ease both;
+  }
+  .hero-badge::before {
+    content: ''; width: 7px; height: 7px;
+    background: #7dd3fc; border-radius: 50%;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%,100% { opacity:1; transform:scale(1); }
+    50% { opacity:0.5; transform:scale(1.4); }
+  }
+  .hero h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(2.4rem, 5vw, 4rem);
+    font-weight: 800; color: var(--white);
+    line-height: 1.1; letter-spacing: -0.03em;
+    margin-bottom: 1.4rem;
+    animation: fadeUp 0.7s 0.1s ease both;
+  }
+  .hero h1 em {
+    font-style: normal; color: var(--teal-light);
+  }
+  .hero p {
+    font-size: 1.1rem; color: rgba(255,255,255,0.65);
+    line-height: 1.7; max-width: 560px;
+    margin-bottom: 2.4rem;
+    animation: fadeUp 0.7s 0.2s ease both;
+  }
+  .hero-ctas {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    animation: fadeUp 0.7s 0.3s ease both;
+  }
+  .btn-primary {
+    background: var(--teal-light); color: var(--white);
+    padding: 0.85rem 2rem; border-radius: 8px;
+    font-weight: 600; font-size: 0.95rem;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: all 0.2s; box-shadow: 0 4px 20px rgba(2,132,199,0.4);
+  }
+  .btn-primary:hover { background: var(--teal); transform: translateY(-2px); box-shadow: 0 8px 28px rgba(2,132,199,0.5); }
+  .btn-outline {
+    border: 1.5px solid rgba(255,255,255,0.25); color: var(--white);
+    padding: 0.85rem 2rem; border-radius: 8px;
+    font-weight: 500; font-size: 0.95rem;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { border-color: var(--teal-light); color: var(--teal-light); }
+
+  .hero-stats {
+    position: relative; z-index: 2;
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1px; margin-top: 5rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 2.5rem;
+    max-width: 500px;
+    animation: fadeUp 0.7s 0.4s ease both;
+  }
+  .stat-item { padding-right: 2rem; }
+  .stat-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2rem; font-weight: 800; color: var(--white);
+    line-height: 1;
+  }
+  .stat-num span { color: var(--teal-light); }
+  .stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.45); margin-top: 0.3rem; }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(24px); }
+    to   { opacity:1; transform:translateY(0); }
+  }
+
+  /* ── TRUST BAR ── */
+  .trust-bar {
+    background: var(--navy-mid);
+    padding: 1.2rem 5%;
+    display: flex; align-items: center; justify-content: center;
+    gap: 3rem; flex-wrap: wrap;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .trust-item {
+    display: flex; align-items: center; gap: 0.6rem;
+    color: rgba(255,255,255,0.5); font-size: 0.82rem; font-weight: 500;
+  }
+  .trust-icon { color: var(--teal-light); font-size: 1rem; }
+
+  /* ── SECTION HEADERS ── */
+  .section { padding: 90px 5%; }
+  .section-tag {
+    display: inline-block;
+    font-size: 0.75rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--teal); margin-bottom: 0.8rem;
+  }
+  .section-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+    font-weight: 800; color: var(--navy);
+    line-height: 1.15; letter-spacing: -0.025em;
+    margin-bottom: 1rem;
+  }
+  .section-sub {
+    font-size: 1.05rem; color: var(--text-light);
+    line-height: 1.7; max-width: 560px;
+  }
+
+  /* ── BUNDLE HIGHLIGHT ── */
+  .bundle-hero {
+    background: linear-gradient(135deg, var(--teal-dark) 0%, var(--navy) 100%);
+    border-radius: 20px;
+    padding: 60px;
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center;
+    position: relative; overflow: hidden;
+    margin-bottom: 60px;
+  }
+  .bundle-hero::before {
+    content: '';
+    position: absolute; top: -60px; right: -60px;
+    width: 300px; height: 300px;
+    background: radial-gradient(circle, rgba(56,189,248,0.2) 0%, transparent 60%);
+    border-radius: 50%;
+  }
+  .bundle-hero-content { position: relative; z-index: 2; }
+  .bundle-hero-content h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.2rem; font-weight: 800;
+    color: var(--white); line-height: 1.15;
+    margin-bottom: 1rem; letter-spacing: -0.025em;
+  }
+  .bundle-hero-content h2 em { font-style: normal; color: #7dd3fc; }
+  .bundle-hero-content p {
+    color: rgba(255,255,255,0.65); font-size: 1rem;
+    line-height: 1.7; margin-bottom: 2rem;
+  }
+  .bundle-price-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 16px; padding: 36px;
+    position: relative; z-index: 2;
+    text-align: center;
+  }
+  .price-was {
+    font-size: 0.85rem; color: rgba(255,255,255,0.4);
+    text-decoration: line-through; margin-bottom: 0.3rem;
+  }
+  .price-now {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3.5rem; font-weight: 800; color: var(--white);
+    line-height: 1; margin-bottom: 0.2rem;
+  }
+  .price-note { font-size: 0.8rem; color: rgba(255,255,255,0.4); margin-bottom: 1.5rem; }
+  .price-savings {
+    display: inline-block;
+    background: var(--gold); color: var(--navy);
+    font-size: 0.8rem; font-weight: 700;
+    padding: 0.3rem 0.9rem; border-radius: 100px;
+    margin-bottom: 1.5rem;
+  }
+  .price-features { list-style: none; text-align: left; margin-bottom: 1.8rem; }
+  .price-features li {
+    display: flex; align-items: center; gap: 0.7rem;
+    color: rgba(255,255,255,0.7); font-size: 0.88rem;
+    padding: 0.4rem 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .price-features li::before {
+    content: '✓'; color: var(--teal-light);
+    font-weight: 700; font-size: 0.9rem; flex-shrink: 0;
+  }
+  .btn-buy {
+    display: block; width: 100%;
+    background: var(--teal-light); color: var(--white);
+    padding: 1rem; border-radius: 8px;
+    font-weight: 700; font-size: 1rem;
+    text-decoration: none; text-align: center;
+    transition: all 0.2s; box-shadow: 0 4px 20px rgba(2,132,199,0.4);
+  }
+  .btn-buy:hover { background: var(--teal); transform: translateY(-2px); }
+
+  /* ── COURSES GRID ── */
+  .courses-section { background: var(--white); }
+  .courses-header {
+    display: flex; justify-content: space-between;
+    align-items: flex-end; margin-bottom: 3rem;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 1.5rem;
+  }
+  .course-card {
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    border-radius: 14px; padding: 28px;
+    position: relative; overflow: hidden;
+    transition: all 0.3s; cursor: default;
+  }
+  .course-card:hover {
+    border-color: var(--teal-light);
+    box-shadow: 0 8px 32px rgba(2,132,199,0.12);
+    transform: translateY(-3px);
+    background: var(--white);
+  }
+  .course-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: var(--teal-light);
+    transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .course-card:hover::before { transform: scaleX(1); }
+
+  .card-top {
+    display: flex; justify-content: space-between;
+    align-items: flex-start; margin-bottom: 1.2rem;
+  }
+  .card-icon {
+    width: 48px; height: 48px;
+    background: var(--mint); border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.4rem;
+  }
+  .card-price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.3rem; font-weight: 800;
+    color: var(--teal);
+  }
+  .card-num {
+    position: absolute; top: 28px; right: 28px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3rem; font-weight: 800;
+    color: rgba(10,124,110,0.06); line-height: 1;
+    pointer-events: none;
+  }
+  .card-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem; font-weight: 700;
+    color: var(--navy); margin-bottom: 0.7rem;
+    line-height: 1.3;
+  }
+  .card-desc {
+    font-size: 0.875rem; color: var(--text-light);
+    line-height: 1.6; margin-bottom: 1.2rem;
+  }
+  .card-meta {
+    display: flex; gap: 0.6rem; flex-wrap: wrap;
+  }
+  .tag {
+    background: var(--mint); color: var(--teal-dark);
+    font-size: 0.72rem; font-weight: 600;
+    padding: 0.25rem 0.6rem; border-radius: 4px;
+    letter-spacing: 0.02em;
+  }
+  .tag.gold { background: var(--gold-light); color: #7a5200; }
+
+  /* ── COMPARISON TABLE ── */
+  .comparison-section { background: var(--off-white); }
+  .comparison-table {
+    width: 100%; border-collapse: collapse;
+    border-radius: 14px; overflow: hidden;
+    box-shadow: 0 4px 24px rgba(13,31,45,0.08);
+  }
+  .comparison-table thead tr {
+    background: var(--navy);
+  }
+  .comparison-table th {
+    padding: 1.1rem 1.5rem; text-align: left;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem; font-weight: 700;
+    color: rgba(255,255,255,0.7);
+    letter-spacing: 0.03em; text-transform: uppercase;
+  }
+  .comparison-table th:last-child { text-align: right; }
+  .comparison-table tbody tr {
+    border-bottom: 1px solid var(--border);
+    background: var(--white);
+    transition: background 0.15s;
+  }
+  .comparison-table tbody tr:hover { background: var(--off-white); }
+  .comparison-table td {
+    padding: 1rem 1.5rem; font-size: 0.9rem; color: var(--text);
+  }
+  .comparison-table td:last-child { text-align: right; }
+  .td-course { font-weight: 600; color: var(--navy); }
+  .td-price { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--teal); }
+  .comparison-table tfoot tr { background: var(--mint); }
+  .comparison-table tfoot td {
+    padding: 1.2rem 1.5rem;
+    font-family: 'Montserrat', sans-serif; font-weight: 700;
+    color: var(--teal-dark);
+  }
+  .comparison-table tfoot td:last-child {
+    font-size: 1.1rem; text-align: right;
+  }
+  .strike { text-decoration: line-through; opacity: 0.5; margin-right: 0.5rem; }
+  .bundle-saving {
+    display: inline-block;
+    background: var(--teal); color: var(--white);
+    font-size: 0.75rem; font-weight: 700;
+    padding: 0.25rem 0.7rem; border-radius: 100px;
+    margin-left: 0.5rem;
+  }
+
+  /* ── WHO IS IT FOR ── */
+  .audience-section { background: var(--white); }
+  .audience-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 3rem;
+  }
+  .audience-card {
+    border: 1px solid var(--border);
+    border-radius: 14px; padding: 32px;
+    transition: all 0.3s;
+  }
+  .audience-card:hover {
+    border-color: var(--teal);
+    box-shadow: 0 6px 24px rgba(2,132,199,0.1);
+  }
+  .audience-icon {
+    font-size: 2.2rem; margin-bottom: 1rem;
+    display: block;
+  }
+  .audience-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--navy); margin-bottom: 0.6rem;
+  }
+  .audience-card p {
+    font-size: 0.875rem; color: var(--text-light); line-height: 1.6;
+  }
+
+  /* ── TEAM PRICING ── */
+  .pricing-section { background: var(--navy); padding: 90px 5%; }
+  .pricing-section .section-title { color: var(--white); }
+  .pricing-section .section-sub { color: rgba(255,255,255,0.5); }
+  .pricing-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem; margin-top: 3rem;
+  }
+  .pricing-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px; padding: 36px;
+    position: relative; transition: all 0.3s;
+  }
+  .pricing-card:hover {
+    border-color: var(--teal-light);
+    background: rgba(2,132,199,0.1);
+  }
+  .pricing-card.featured {
+    border-color: var(--teal-light);
+    background: rgba(2,132,199,0.15);
+  }
+  .featured-badge {
+    position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+    background: var(--gold); color: var(--navy);
+    font-size: 0.72rem; font-weight: 700;
+    padding: 0.3rem 1rem; border-radius: 100px;
+    letter-spacing: 0.05em; text-transform: uppercase;
+    white-space: nowrap;
+  }
+  .plan-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem; font-weight: 700;
+    color: rgba(255,255,255,0.6); margin-bottom: 0.5rem;
+    text-transform: uppercase; letter-spacing: 0.05em;
+  }
+  .plan-price {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 2.8rem; font-weight: 800;
+    color: var(--white); line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+  .plan-price sup { font-size: 1.4rem; vertical-align: super; }
+  .plan-desc {
+    font-size: 0.82rem; color: rgba(255,255,255,0.4);
+    margin-bottom: 1.8rem; padding-bottom: 1.8rem;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .plan-features { list-style: none; margin-bottom: 2rem; }
+  .plan-features li {
+    display: flex; align-items: flex-start; gap: 0.7rem;
+    color: rgba(255,255,255,0.65); font-size: 0.875rem;
+    padding: 0.45rem 0;
+  }
+  .plan-features li::before {
+    content: '✓'; color: var(--teal-light);
+    font-weight: 700; flex-shrink: 0; margin-top: 1px;
+  }
+  .btn-plan {
+    display: block; width: 100%; text-align: center;
+    padding: 0.85rem; border-radius: 8px;
+    font-weight: 600; font-size: 0.9rem;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .btn-plan-primary {
+    background: var(--teal-light); color: var(--white);
+    box-shadow: 0 4px 16px rgba(2,132,199,0.4);
+  }
+  .btn-plan-primary:hover { background: var(--teal); }
+  .btn-plan-outline {
+    border: 1.5px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7);
+  }
+  .btn-plan-outline:hover { border-color: var(--teal-light); color: var(--teal-light); }
+
+
+  /* ── JOB CORNER ── */
+  .jobs-section { background: var(--white); }
+  .jobs-intro {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center; margin-bottom: 3.5rem;
+  }
+  .jobs-intro-text .section-sub { max-width: 100%; }
+  .jobs-stat-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 1rem; }
+  .jobs-stat-box {
+    background: var(--off-white); border: 1px solid var(--border);
+    border-radius: 12px; padding: 20px; text-align: center;
+  }
+  .jobs-stat-box .big {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.8rem; font-weight: 800; color: var(--teal); line-height: 1;
+  }
+  .jobs-stat-box .lbl { font-size: 0.75rem; color: var(--text-light); margin-top: 0.3rem; line-height: 1.3; }
+  .jobs-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+  .job-card {
+    background: var(--off-white); border: 1px solid var(--border);
+    border-radius: 14px; padding: 28px; position: relative; overflow: hidden; transition: all 0.3s;
+  }
+  .job-card:hover {
+    border-color: var(--teal-light); box-shadow: 0 8px 28px rgba(2,132,199,0.12);
+    transform: translateY(-3px); background: var(--white);
+  }
+  .job-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; margin-bottom: 1rem; }
+  .job-icon {
+    width: 46px; height: 46px; flex-shrink: 0;
+    background: var(--mint); border-radius: 10px;
+    display: flex; align-items: center; justify-content: center; font-size: 1.3rem;
+  }
+  .job-salary-badge {
+    background: var(--teal); color: var(--white);
+    font-family: "Montserrat", sans-serif; font-size: 0.78rem; font-weight: 700;
+    padding: 0.35rem 0.8rem; border-radius: 100px; white-space: nowrap; align-self: flex-start;
+  }
+  .job-title { font-family: "Montserrat", sans-serif; font-size: 1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem; line-height: 1.3; }
+  .job-desc { font-size: 0.85rem; color: var(--text-light); line-height: 1.6; margin-bottom: 1.2rem; }
+  .job-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1rem; }
+  .job-tag { background: var(--mint); color: var(--teal-dark); font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.55rem; border-radius: 4px; }
+  .job-courses { border-top: 1px solid var(--border); padding-top: 1rem; margin-top: 0.5rem; }
+  .job-courses-label { font-size: 0.72rem; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 0.5rem; }
+  .job-courses-list { font-size: 0.78rem; color: var(--text-light); line-height: 1.6; }
+  .salary-disclaimer {
+    margin-top: 2rem; background: var(--off-white); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 20px; font-size: 0.78rem; color: var(--text-light); line-height: 1.6;
+  }
+  .salary-disclaimer strong { color: var(--text); }
+
+
+  /* ── CUSTOM BUNDLE ── */
+  .custom-section { background: var(--white); }
+  .custom-intro {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4rem; align-items: center; margin-bottom: 3rem;
+  }
+  .custom-builder {
+    background: var(--off-white);
+    border: 1px solid var(--border);
+    border-radius: 16px; padding: 36px;
+  }
+  .builder-header {
+    display: flex; justify-content: space-between;
+    align-items: center; margin-bottom: 1.5rem;
+    flex-wrap: wrap; gap: 1rem;
+  }
+  .builder-header h3 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1rem; font-weight: 700;
+    color: var(--navy);
+  }
+  .builder-counter {
+    background: var(--teal); color: var(--white);
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.8rem; font-weight: 700;
+    padding: 0.35rem 1rem; border-radius: 100px;
+    transition: all 0.3s;
+  }
+  .course-picker { display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem; }
+  .picker-item {
+    display: flex; align-items: center; gap: 0.8rem;
+    background: var(--white); border: 1.5px solid var(--border);
+    border-radius: 8px; padding: 12px 14px;
+    cursor: pointer; transition: all 0.2s; user-select: none;
+  }
+  .picker-item:hover { border-color: var(--teal-light); background: var(--off-white); }
+  .picker-item.selected {
+    border-color: var(--teal-light);
+    background: var(--mint);
+  }
+  .picker-checkbox {
+    width: 20px; height: 20px; border-radius: 5px;
+    border: 2px solid var(--border); flex-shrink: 0;
+    display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s; background: var(--white);
+  }
+  .picker-item.selected .picker-checkbox {
+    background: var(--teal-light); border-color: var(--teal-light);
+    color: var(--white);
+  }
+  .picker-checkbox::after { content: '✓'; font-size: 0.75rem; font-weight: 700; opacity: 0; }
+  .picker-item.selected .picker-checkbox::after { opacity: 1; }
+  .picker-name { font-size: 0.85rem; font-weight: 500; color: var(--text); flex: 1; line-height: 1.3; }
+  .picker-price {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.85rem; font-weight: 700; color: var(--teal);
+    flex-shrink: 0;
+  }
+  .builder-summary {
+    border-top: 1px solid var(--border);
+    padding-top: 1.2rem;
+  }
+  .summary-row {
+    display: flex; justify-content: space-between;
+    align-items: center; margin-bottom: 0.5rem;
+    font-size: 0.85rem; color: var(--text-light);
+  }
+  .summary-row.total {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700; color: var(--navy);
+    font-size: 1rem; margin-top: 0.5rem;
+    padding-top: 0.5rem; border-top: 1px solid var(--border);
+  }
+  .summary-row .saving {
+    color: var(--teal); font-weight: 700; font-size: 0.8rem;
+  }
+  .builder-cta {
+    display: block; width: 100%; text-align: center;
+    background: var(--teal-light); color: var(--white);
+    padding: 0.95rem; border-radius: 8px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700; font-size: 0.9rem;
+    text-decoration: none; margin-top: 1.2rem;
+    transition: all 0.2s; cursor: pointer; border: none;
+    box-shadow: 0 4px 16px rgba(2,132,199,0.3);
+  }
+  .builder-cta:hover { background: var(--teal); transform: translateY(-2px); }
+  .builder-cta:disabled {
+    background: var(--border); color: var(--text-light);
+    cursor: not-allowed; box-shadow: none; transform: none;
+  }
+  .builder-note {
+    font-size: 0.75rem; color: var(--text-light);
+    text-align: center; margin-top: 0.8rem; line-height: 1.5;
+  }
+  .custom-info { }
+  .custom-info .section-sub { margin-bottom: 2rem; }
+  .custom-perks { display: flex; flex-direction: column; gap: 1rem; }
+  .custom-perk {
+    display: flex; align-items: flex-start; gap: 1rem;
+    background: var(--off-white); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px;
+  }
+  .perk-icon {
+    width: 40px; height: 40px; flex-shrink: 0;
+    background: var(--mint); border-radius: 8px;
+    display: flex; align-items: center; justify-content: center; font-size: 1.1rem;
+  }
+  .perk-text h4 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 0.88rem; font-weight: 700;
+    color: var(--navy); margin-bottom: 0.2rem;
+  }
+  .perk-text p { font-size: 0.8rem; color: var(--text-light); line-height: 1.5; }
+
+  /* ── STUDENT ADVISOR ── */
+  .advisor-section {
+    background: linear-gradient(135deg, var(--navy) 0%, #0c3a5c 100%);
+    padding: 90px 5%; position: relative; overflow: hidden;
+  }
+  .advisor-section::before {
+    content: '';
+    position: absolute; inset: 0;
+    background-image: radial-gradient(circle at 80% 50%, rgba(56,189,248,0.1) 0%, transparent 50%),
+                      radial-gradient(circle at 20% 80%, rgba(2,132,199,0.08) 0%, transparent 40%);
+  }
+  .advisor-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 5rem; align-items: center; position: relative; z-index: 2;
+  }
+  .advisor-left .section-tag { color: var(--teal-light); }
+  .advisor-left .section-tag::before { display: none; }
+  .advisor-left .section-title { color: var(--white); }
+  .advisor-left .section-sub { color: rgba(255,255,255,0.55); margin-bottom: 2rem; }
+  .advisor-features { display: flex; flex-direction: column; gap: 0.8rem; margin-bottom: 2rem; }
+  .advisor-feature {
+    display: flex; align-items: center; gap: 0.8rem;
+    color: rgba(255,255,255,0.7); font-size: 0.88rem;
+  }
+  .advisor-feature::before {
+    content: '✓'; width: 22px; height: 22px; flex-shrink: 0;
+    background: rgba(56,189,248,0.15); border: 1px solid rgba(56,189,248,0.3);
+    border-radius: 50%; display: flex; align-items: center; justify-content: center;
+    color: var(--teal-light); font-size: 0.7rem; font-weight: 700;
+  }
+  .advisor-avatars {
+    display: flex; align-items: center; gap: 0.8rem; margin-top: 1rem;
+  }
+  .avatar-stack { display: flex; }
+  .avatar {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--teal); border: 2px solid var(--navy);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1rem; margin-left: -10px; color: white;
+  }
+  .avatar:first-child { margin-left: 0; }
+  .avatar-text { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
+  .avatar-text strong { color: var(--white); display: block; }
+
+  /* Contact Form */
+  .advisor-form {
+    background: var(--white);
+    border-radius: 16px; padding: 40px;
+  }
+  .form-title {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem; font-weight: 700;
+    color: var(--navy); margin-bottom: 0.4rem;
+  }
+  .form-subtitle {
+    font-size: 0.82rem; color: var(--text-light);
+    margin-bottom: 1.8rem; line-height: 1.5;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem; }
+  .form-group { display: flex; flex-direction: column; gap: 0.4rem; margin-bottom: 1rem; }
+  .form-group label {
+    font-size: 0.75rem; font-weight: 700;
+    color: var(--text); letter-spacing: 0.04em; text-transform: uppercase;
+  }
+  .form-group input,
+  .form-group select,
+  .form-group textarea {
+    padding: 0.75rem 1rem;
+    border: 1.5px solid var(--border); border-radius: 8px;
+    font-family: "Source Sans 3", sans-serif;
+    font-size: 0.9rem; color: var(--text);
+    background: var(--off-white); transition: border-color 0.2s;
+    outline: none; width: 100%;
+  }
+  .form-group input:focus,
+  .form-group select:focus,
+  .form-group textarea:focus { border-color: var(--teal-light); background: var(--white); }
+  .form-group textarea { resize: vertical; min-height: 90px; }
+  .form-submit {
+    display: block; width: 100%;
+    background: var(--teal-light); color: var(--white);
+    padding: 1rem; border-radius: 8px; border: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700; font-size: 0.9rem;
+    cursor: pointer; transition: all 0.2s;
+    box-shadow: 0 4px 16px rgba(2,132,199,0.3);
+  }
+  .form-submit:hover { background: var(--teal); transform: translateY(-2px); }
+  .form-success {
+    display: none; text-align: center; padding: 2rem;
+  }
+  .form-success .success-icon { font-size: 3rem; margin-bottom: 1rem; }
+  .form-success h4 {
+    font-family: "Montserrat", sans-serif;
+    font-size: 1.1rem; font-weight: 700; color: var(--navy); margin-bottom: 0.5rem;
+  }
+  .form-success p { font-size: 0.88rem; color: var(--text-light); }
+  .form-privacy {
+    font-size: 0.72rem; color: var(--text-light);
+    text-align: center; margin-top: 0.8rem; line-height: 1.5;
+  }
+
+  @media (max-width: 900px) {
+    .custom-intro { grid-template-columns: 1fr; gap: 2rem; }
+    .advisor-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  }
+  @media (max-width: 600px) {
+    .form-row { grid-template-columns: 1fr; }
+    .advisor-form { padding: 24px; }
+    .custom-builder { padding: 24px; }
+  }
+
+  /* ── FAQ ── */
+  .faq-section { background: var(--off-white); }
+  .faq-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1rem; margin-top: 3rem;
+  }
+  .faq-item {
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 12px; padding: 24px;
+  }
+  .faq-item h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.95rem; font-weight: 700;
+    color: var(--navy); margin-bottom: 0.6rem;
+  }
+  .faq-item p {
+    font-size: 0.875rem; color: var(--text-light); line-height: 1.6;
+  }
+
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--navy) 100%);
+    padding: 80px 5%; text-align: center;
+  }
+  .cta-banner h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    font-weight: 800; color: var(--white);
+    margin-bottom: 1rem; letter-spacing: -0.025em;
+  }
+  .cta-banner p {
+    color: rgba(255,255,255,0.65); font-size: 1.05rem;
+    margin-bottom: 2.5rem; max-width: 500px; margin-left: auto; margin-right: auto;
+  }
+  .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--navy); padding: 40px 5%;
+    text-align: center; border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  footer p { font-size: 0.82rem; color: rgba(255,255,255,0.3); }
+  footer a { color: var(--teal-light); text-decoration: none; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .bundle-hero { grid-template-columns: 1fr; gap: 2rem; padding: 40px 30px; }
+    .audience-grid { grid-template-columns: 1fr 1fr; }
+    .pricing-grid { grid-template-columns: 1fr; }
+    .faq-grid { grid-template-columns: 1fr; }
+    .courses-grid { grid-template-columns: 1fr; }
+    .jobs-intro { grid-template-columns: 1fr; gap: 2rem; }
+    .jobs-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 600px) {
+    .nav-links { display: none; }
+    .audience-grid { grid-template-columns: 1fr; }
+    .hero-stats { grid-template-columns: 1fr; gap: 1.5rem; }
+    .trust-bar { gap: 1.5rem; }
+    .jobs-intro { grid-template-columns: 1fr; gap: 1.5rem; }
+    .jobs-stat-row { grid-template-columns: repeat(3,1fr); gap: 0.5rem; }
+    .jobs-grid { grid-template-columns: 1fr; }
+    .section { padding: 60px 4%; }
+    .job-card { padding: 20px; }
+    .jobs-stat-box { padding: 12px 8px; }
+    .jobs-stat-box .big { font-size: 1.4rem; }
+    .jobs-stat-box .lbl { font-size: 0.65rem; }
+    .section-title { font-size: 1.6rem; }
+    .section-sub { font-size: 0.95rem; }
+    .job-salary-badge { font-size: 0.7rem; padding: 0.3rem 0.6rem; }
+    .hero h1 { font-size: 2rem; }
+    .bundle-hero-content h2 { font-size: 1.6rem; }
+    .price-now { font-size: 2.8rem; }
+    .comparison-table { font-size: 0.8rem; }
+    .comparison-table th, .comparison-table td { padding: 0.75rem 0.75rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">Digital<span>Care</span>Pro</div>
+  <ul class="nav-links">
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#who">Who It's For</a></li>
+    <li><a href="#custom">Build Your Bundle</a></li>
+    <li><a href="#advisor">Advisor</a></li>
+    <li><a href="#jobs">Job Corner</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <a href="#pricing" class="nav-cta">Get Bundle →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+  <div style="width:100%">
+    <div class="hero-content">
+      <div class="hero-badge">CPD Accredited · UK Care Sector</div>
+      <h1>The <em>Digital Care</em><br>Professional Bundle</h1>
+      <p>11 online courses built for health and social care professionals working across the modern UK care sector. Cyber security, GDPR, eMAR, AI tools — everything your team needs to stay compliant, confident, and CQC-ready.</p>
+      <div class="hero-ctas">
+        <a href="#pricing" class="btn-primary">Get Full Bundle — £79 ↓</a>
+        <a href="#courses" class="btn-outline">View All 11 Courses</a>
+      </div>
+    </div>
+    <div class="hero-stats">
+      <div class="stat-item">
+        <div class="stat-num">11<span>×</span></div>
+        <div class="stat-label">CPD Accredited Courses</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">£<span>79</span></div>
+        <div class="stat-label">Full Bundle Price</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-num">35<span>%</span></div>
+        <div class="stat-label">Saving vs Individual</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-item"><span class="trust-icon">✓</span> CPD Accredited</div>
+  <div class="trust-item"><span class="trust-icon">✓</span> CQC Compliant</div>
+  <div class="trust-item"><span class="trust-icon">✓</span> UK GDPR Aligned</div>
+  <div class="trust-item"><span class="trust-icon">✓</span> Self-Paced Learning</div>
+  <div class="trust-item"><span class="trust-icon">✓</span> Instant Certificate</div>
+  <div class="trust-item"><span class="trust-icon">✓</span> Any Device</div>
+</div>
+
+<!-- BUNDLE OVERVIEW -->
+<section class="section" id="bundle">
+  <div class="bundle-hero">
+    <div class="bundle-hero-content">
+      <h2>One Bundle.<br><em>Complete Digital Readiness</em><br>for Care Teams.</h2>
+      <p>The Digital Care Professional Bundle brings together 11 carefully selected CPD-accredited courses covering the full spectrum of digital skills your care organisation needs — from cyber security basics to AI tools for administrators. Save 35% compared to buying individually.</p>
+      <a href="#courses" class="btn-primary" style="display:inline-flex">Explore All 11 Courses ↓</a>
+    </div>
+    <div class="bundle-price-card">
+      <div class="price-was">Individual total: £118</div>
+      <div class="price-now">£79</div>
+      <div class="price-note">per learner · VAT may apply</div>
+      <div class="price-savings">🎉 Save £39 — 33% OFF</div>
+      <ul class="price-features">
+        <li>All 11 CPD accredited courses</li>
+        <li>Instant access on any device</li>
+        <li>Digital certificate on completion</li>
+        <li>365-day access from purchase</li>
+        <li>Self-paced — learn at your own speed</li>
+        <li>CQC & ICO compliant content</li>
+      </ul>
+      <a href="#" class="btn-buy">Enrol Now — £79</a>
+    </div>
+  </div>
+</section>
+
+<!-- COURSES GRID -->
+<section class="section courses-section" id="courses">
+  <div class="courses-header">
+    <div>
+      <div class="section-tag">What You'll Learn</div>
+      <h2 class="section-title">All 11 Courses<br>in the Bundle</h2>
+    </div>
+    <div class="section-sub" style="font-size:0.9rem">Each course includes a CPD-accredited certificate, self-paced modules, and unlimited access for 365 days.</div>
+  </div>
+
+  <div class="courses-grid">
+
+    <div class="course-card">
+      <div class="card-num">01</div>
+      <div class="card-top">
+        <div class="card-icon">🔐</div>
+        <div class="card-price">£12</div>
+      </div>
+      <div class="card-title">Cyber Security Awareness for Care Staff</div>
+      <div class="card-desc">Equips frontline care staff with practical knowledge to recognise and respond to digital threats — password management, safe device usage, and incident reporting. No technical background required.</div>
+      <div class="card-meta">
+        <span class="tag">1–2 hrs</span>
+        <span class="tag">CPD Accredited</span>
+        <span class="tag">All Staff</span>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="card-num">02</div>
+      <div class="card-top">
+        <div class="card-icon">📋</div>
+        <div class="card-price">£12</div>
+      </div>
+      <div class="card-title">GDPR & Data Protection in Health and Social Care</div>
+      <div class="card-desc">Covers UK GDPR principles, Data Protection Act 2018, lawful processing, data subject rights and consent — specifically tailored for health and social care environments. Aligned with ICO and CQC guidance.</div>
+      <div class="card-meta">
+        <span class="tag">1.5–2 hrs</span>
+        <span class="tag">CQC Compliant</span>
+        <span class="tag gold">⭐ Bestseller</span>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="card-num">03</div>
+      <div class="card-top">
+        <div class="card-icon">🔒</div>
+        <div class="card-price">£10</div>
+      </div>
+      <div class="card-title">Safe Use of Patient Data & Confidentiality</div>
+      <div class="card-desc">Explores legal and professional obligations when handling patient information — the duty of confidentiality, information sharing, Caldicott Principles, and real-world scenarios every care worker faces.</div>
+      <div class="card-meta">
+        <span class="tag">1 hr</span>
+        <span class="tag">CPD Accredited</span>
+        <span class="tag">All Roles</span>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="card-num">04</div>
+      <div class="card-top">
+        <div class="card-icon">🎣</div>
+        <div class="card-price">£10</div>
+      </div>
+      <div class="card-title">Phishing & Social Engineering Awareness for NHS/Care Workers</div>
+      <div class="card-desc">Teaches staff to identify suspicious emails, fraudulent calls, and manipulation tactics — the most common causes of NHS data breaches. Includes hands-on practice spotting red flags and reporting procedures.</div>
+      <div class="card-meta">
+        <span class="tag">1 hr</span>
+        <span class="tag">CPD Accredited</span>
+        <span class="tag gold">⭐ High Demand</span>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="card-num">05</div>
+      <div class="card-top">
+        <div class="card-icon">💻</div>
+        <div class="card-price">£9</div>
+      </div>
+      <div class="card-title">Digital Literacy for Care Workers (Beginner Level)</div>
+      <div class="card-desc">Builds essential digital confidence for day-to-day care work — devices, basic software, online communication, digital care records, and internet safety. Designed for learners with no prior IT experience.</div>
+      <div class="card-meta">
+        <span class="tag">2 hrs</span>
+        <span class="tag">Beginner Friendly</span>
+        <span class="tag">No IT Experience Needed</span>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="card-num">06</div>
+      <div class="card-top">
+        <div class="card-icon">💊</div>
+        <div class="card-price">£14</div>
+      </div>
+      <div class="card-title">Electronic Medication Administration Records (eMAR) Training</div>
+      <div class="card-desc">Introduces care staff to eMAR systems in line with UK healthcare legislation — covering accurate digital medication recording, error prevention, audit compliance, and real-world clinical scenarios.</div>
+      <div class="card-meta">
+        <span class="tag">2 hrs</span>
+        <span class="tag">CPD Accredited</span>
+        <span class="tag gold">⭐ Bestseller</span>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="card-num">07</div>
+      <div class="card-top">
+        <div class="card-icon">🎥</div>
+        <div class="card-price">£10</div>
+      </div>
+      <div class="card-title">Video Consultation Skills for Healthcare Staff</div>
+      <div class="card-desc">Prepares healthcare staff for professional virtual appointments — platform etiquette, safeguarding in virtual settings, supporting patients with low digital confidence, and maintaining clinical standards remotely.</div>
+      <div class="card-meta">
+        <span class="tag">1 hr</span>
+        <span class="tag">CPD Accredited</span>
+        <span class="tag">Clinical Staff</span>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="card-num">08</div>
+      <div class="card-top">
+        <div class="card-icon">📡</div>
+        <div class="card-price">£10</div>
+      </div>
+      <div class="card-title">Remote Monitoring Technology in Care</div>
+      <div class="card-desc">Introduces wearables, sensors, and remote monitoring tools transforming UK care delivery — how to interpret alerts and data, ethical and consent considerations, and supporting person-centred care through technology.</div>
+      <div class="card-meta">
+        <span class="tag">1.5 hrs</span>
+        <span class="tag">CPD Accredited</span>
+        <span class="tag">Care Settings</span>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="card-num">09</div>
+      <div class="card-top">
+        <div class="card-icon">📊</div>
+        <div class="card-price">£9</div>
+      </div>
+      <div class="card-title">Using Spreadsheets for Care Managers</div>
+      <div class="card-desc">Practical training for care managers using Excel and Google Sheets for rotas, budgets, incident logs, and staff records. No advanced IT skills needed — just a desire to work smarter and more efficiently.</div>
+      <div class="card-meta">
+        <span class="tag">1.5 hrs</span>
+        <span class="tag">Managers</span>
+        <span class="tag">Excel & Google Sheets</span>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="card-num">10</div>
+      <div class="card-top">
+        <div class="card-icon">🤖</div>
+        <div class="card-price">£12</div>
+      </div>
+      <div class="card-title">Introduction to AI Tools for Healthcare Administrators</div>
+      <div class="card-desc">Demystifies AI for healthcare administrators — what AI tools actually do, responsible usage, data privacy considerations, and practical examples relevant to UK care settings. No technical background required.</div>
+      <div class="card-meta">
+        <span class="tag">1.5 hrs</span>
+        <span class="tag">Administrators</span>
+        <span class="tag gold">🆕 New</span>
+      </div>
+    </div>
+
+    <div class="course-card">
+      <div class="card-num">11</div>
+      <div class="card-top">
+        <div class="card-icon">🧠</div>
+        <div class="card-price">£10</div>
+      </div>
+      <div class="card-title">Digital Tools for Mental Health Practitioners</div>
+      <div class="card-desc">Explores apps, teletherapy platforms, digital care planning, and online peer support resources for mental health practitioners — including ethical boundaries, digital safeguarding, and supporting clients with low tech confidence.</div>
+      <div class="card-meta">
+        <span class="tag">2 hrs</span>
+        <span class="tag">CPD Accredited</span>
+        <span class="tag">MH Practitioners</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRICING COMPARISON TABLE -->
+<section class="section comparison-section" id="compare">
+  <div class="section-tag">Transparent Pricing</div>
+  <h2 class="section-title">Individual vs Bundle Pricing</h2>
+  <p class="section-sub">Buy any course individually or save 33% with the full bundle — the smarter choice for teams and organisations.</p>
+
+  <div style="margin-top:2.5rem; overflow-x:auto;">
+    <table class="comparison-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Course</th>
+          <th>Duration</th>
+          <th>Individual Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>01</td><td class="td-course">Cyber Security Awareness for Care Staff</td><td>1–2 hrs</td><td class="td-price">£12</td></tr>
+        <tr><td>02</td><td class="td-course">GDPR & Data Protection in Health and Social Care</td><td>1.5–2 hrs</td><td class="td-price">£12</td></tr>
+        <tr><td>03</td><td class="td-course">Safe Use of Patient Data & Confidentiality</td><td>1 hr</td><td class="td-price">£10</td></tr>
+        <tr><td>04</td><td class="td-course">Phishing & Social Engineering Awareness</td><td>1 hr</td><td class="td-price">£10</td></tr>
+        <tr><td>05</td><td class="td-course">Digital Literacy for Care Workers</td><td>2 hrs</td><td class="td-price">£9</td></tr>
+        <tr><td>06</td><td class="td-course">eMAR Training</td><td>2 hrs</td><td class="td-price">£14</td></tr>
+        <tr><td>07</td><td class="td-course">Video Consultation Skills for Healthcare Staff</td><td>1 hr</td><td class="td-price">£10</td></tr>
+        <tr><td>08</td><td class="td-course">Remote Monitoring Technology in Care</td><td>1.5 hrs</td><td class="td-price">£10</td></tr>
+        <tr><td>09</td><td class="td-course">Using Spreadsheets for Care Managers</td><td>1.5 hrs</td><td class="td-price">£9</td></tr>
+        <tr><td>10</td><td class="td-course">Introduction to AI Tools for Healthcare Administrators</td><td>1.5 hrs</td><td class="td-price">£12</td></tr>
+        <tr><td>11</td><td class="td-course">Digital Tools for Mental Health Practitioners</td><td>2 hrs</td><td class="td-price">£10</td></tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2">Digital Care Professional Bundle — All 11 Courses</td>
+          <td>16+ hrs</td>
+          <td><span class="strike">£118</span> <strong>£79</strong><span class="bundle-saving">Save £39</span></td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+</section>
+
+<!-- WHO IT'S FOR -->
+<section class="section audience-section" id="who">
+  <div class="section-tag">Who It's For</div>
+  <h2 class="section-title">Built for Every Role<br>in the Care Sector</h2>
+  <p class="section-sub">Whether you're a frontline care worker, a manager, or an NHS administrator — there's something in this bundle designed specifically for your role.</p>
+
+  <div class="audience-grid">
+    <div class="audience-card">
+      <span class="audience-icon">🏥</span>
+      <h3>Frontline Care Workers</h3>
+      <p>Courses 1–5 are built for you — no IT background needed. Build digital confidence, stay GDPR compliant, and protect patient data from day one.</p>
+    </div>
+    <div class="audience-card">
+      <span class="audience-icon">👩‍💼</span>
+      <h3>Care Home Managers</h3>
+      <p>Courses 6, 8 & 9 give you the tools to oversee eMAR systems, manage remote monitoring technology, and run your home more efficiently with spreadsheets.</p>
+    </div>
+    <div class="audience-card">
+      <span class="audience-icon">🏢</span>
+      <h3>NHS & Care Organisations</h3>
+      <p>Buy team or organisational licences to train entire departments at once. All courses are CQC and ICO compliant — ideal for inspection readiness.</p>
+    </div>
+    <div class="audience-card">
+      <span class="audience-icon">💬</span>
+      <h3>Mental Health Practitioners</h3>
+      <p>Course 11 is purpose-built — exploring digital care planning, teletherapy tools, and digital safeguarding for those working in mental health settings.</p>
+    </div>
+    <div class="audience-card">
+      <span class="audience-icon">🖥️</span>
+      <h3>Healthcare Administrators</h3>
+      <p>Courses 7, 9 & 10 cover video consultations, spreadsheet management, and AI tools — practical skills for the modern healthcare office environment.</p>
+    </div>
+    <div class="audience-card">
+      <span class="audience-icon">📚</span>
+      <h3>Individuals Upskilling</h3>
+      <p>Studying health and social care? These courses add real CPD value to your CV and demonstrate digital competence to future employers across the UK.</p>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM PRICING -->
+<section class="pricing-section" id="pricing">
+  <div class="section-tag" style="color:var(--teal-light)">Flexible Pricing</div>
+  <h2 class="section-title">Plans for Every Size</h2>
+  <p class="section-sub">Individual learner or 500-person organisation — we have a pricing plan that works for you.</p>
+
+  <div class="pricing-grid">
+    <div class="pricing-card">
+      <div class="plan-name">Individual</div>
+      <div class="plan-price"><sup>£</sup>79</div>
+      <div class="plan-desc">Per learner · One-time payment · 365-day access</div>
+      <ul class="plan-features">
+        <li>All 11 CPD accredited courses</li>
+        <li>16+ hours of learning content</li>
+        <li>Instant digital certificate</li>
+        <li>Self-paced — learn anytime</li>
+        <li>Access on any device</li>
+        <li>365-day access from purchase</li>
+      </ul>
+      <a href="#" class="btn-plan btn-plan-outline">Enrol as Individual</a>
+    </div>
+
+    <div class="pricing-card featured">
+      <div class="featured-badge">Most Popular</div>
+      <div class="plan-name">Team</div>
+      <div class="plan-price"><sup>£</sup>349</div>
+      <div class="plan-desc">Up to 10 staff · One-time payment · 365-day access</div>
+      <ul class="plan-features">
+        <li>Everything in Individual</li>
+        <li>Up to 10 team members</li>
+        <li>Manager progress dashboard</li>
+        <li>Bulk certificate downloads</li>
+        <li>Priority email support</li>
+        <li>Ideal for small care homes</li>
+      </ul>
+      <a href="#" class="btn-plan btn-plan-primary">Enrol Your Team</a>
+    </div>
+
+    <div class="pricing-card">
+      <div class="plan-name">Organisation</div>
+      <div class="plan-price"><sup>£</sup>799</div>
+      <div class="plan-desc">Unlimited staff · Annual licence · Full LMS access</div>
+      <ul class="plan-features">
+        <li>Everything in Team</li>
+        <li>Unlimited staff enrolments</li>
+        <li>Full LMS admin dashboard</li>
+        <li>Custom branding available</li>
+        <li>Dedicated account manager</li>
+        <li>CQC inspection-ready reports</li>
+      </ul>
+      <a href="#" class="btn-plan btn-plan-outline">Contact for Licence</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- JOB CORNER -->
+<section class="section jobs-section" id="jobs">
+  <div class="section-tag">Career Outcomes</div>
+  <h2 class="section-title">Job Corner — Where This<br>Bundle Can Take You</h2>
+
+  <div class="jobs-intro">
+    <div class="jobs-intro-text">
+      <p class="section-sub">Completing the Digital Care Professional Bundle doesn't just tick a CPD box — it opens doors to higher-paid roles across the NHS and private care sector. Here are the UK jobs you can realistically target, with 2026 salary data from Indeed, Glassdoor, and NHS pay bands.</p>
+    </div>
+    <div class="jobs-stat-row">
+      <div class="jobs-stat-box">
+        <div class="big">£28k</div>
+        <div class="lbl">Median UK health &amp; social care salary (2026)</div>
+      </div>
+      <div class="jobs-stat-box">
+        <div class="big">131+</div>
+        <div class="lbl">Open data protection roles in UK healthcare</div>
+      </div>
+      <div class="jobs-stat-box">
+        <div class="big">↑35%</div>
+        <div class="lbl">Salary uplift with digital specialist skills</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="jobs-grid">
+
+    <div class="job-card">
+      <div class="job-card-top">
+        <div class="job-icon">🔐</div>
+        <div class="job-salary-badge">£30,000 – £45,000</div>
+      </div>
+      <div class="job-title">Information Governance & Data Protection Officer</div>
+      <div class="job-desc">Ensures NHS trusts, care homes, and health organisations comply with UK GDPR and ICO requirements. Oversees data breaches, subject access requests, and staff training on data protection.</div>
+      <div class="job-tags">
+        <span class="job-tag">NHS Bands 5–7</span>
+        <span class="job-tag">NHS / Private Care</span>
+        <span class="job-tag">Full Time</span>
+      </div>
+      <div class="job-courses">
+        <div class="job-courses-label">Relevant Bundle Courses</div>
+        <div class="job-courses-list">GDPR & Data Protection · Safe Use of Patient Data · Cyber Security Awareness · Phishing Awareness</div>
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-card-top">
+        <div class="job-icon">📋</div>
+        <div class="job-salary-badge">£26,000 – £34,000</div>
+      </div>
+      <div class="job-title">Digital Care Coordinator</div>
+      <div class="job-desc">Manages care plans, rotas, and digital records across a care team. Uses eMAR and care management systems to coordinate safe, person-centred care delivery. Average UK salary £28,211 (Indeed, 2026).</div>
+      <div class="job-tags">
+        <span class="job-tag">Care Homes</span>
+        <span class="job-tag">Domiciliary Care</span>
+        <span class="job-tag">NHS Community</span>
+      </div>
+      <div class="job-courses">
+        <div class="job-courses-label">Relevant Bundle Courses</div>
+        <div class="job-courses-list">eMAR Training · Digital Literacy · Remote Monitoring · Using Spreadsheets</div>
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-card-top">
+        <div class="job-icon">💊</div>
+        <div class="job-salary-badge">£28,000 – £40,000</div>
+      </div>
+      <div class="job-title">eMAR & Medicines Management Lead</div>
+      <div class="job-desc">Specialist role overseeing electronic medication administration systems across care settings. Trains staff, audits compliance, and liaises with pharmacies and CQC inspectors on medicines management.</div>
+      <div class="job-tags">
+        <span class="job-tag">Care Homes</span>
+        <span class="job-tag">NHS</span>
+        <span class="job-tag">Growing Demand</span>
+      </div>
+      <div class="job-courses">
+        <div class="job-courses-label">Relevant Bundle Courses</div>
+        <div class="job-courses-list">eMAR Training · Digital Literacy · Safe Use of Patient Data · GDPR & Data Protection</div>
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-card-top">
+        <div class="job-icon">🖥️</div>
+        <div class="job-salary-badge">£24,000 – £35,000</div>
+      </div>
+      <div class="job-title">Healthcare Administrator (Digital)</div>
+      <div class="job-desc">Manages patient records, scheduling, and reporting systems within GP surgeries, NHS trusts, or private clinics. Increasing demand for administrators confident with AI tools and digital workflows.</div>
+      <div class="job-tags">
+        <span class="job-tag">GP Surgeries</span>
+        <span class="job-tag">NHS Trusts</span>
+        <span class="job-tag">Private Clinics</span>
+      </div>
+      <div class="job-courses">
+        <div class="job-courses-label">Relevant Bundle Courses</div>
+        <div class="job-courses-list">AI Tools for Administrators · Using Spreadsheets · Video Consultation Skills · GDPR</div>
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-card-top">
+        <div class="job-icon">🧠</div>
+        <div class="job-salary-badge">£24,000 – £38,000</div>
+      </div>
+      <div class="job-title">Digital Mental Health Practitioner</div>
+      <div class="job-desc">Delivers support via teletherapy platforms, manages digital care plans, and provides remote mental health interventions. A fast-growing area since NHS England's expansion of digital mental health services.</div>
+      <div class="job-tags">
+        <span class="job-tag">NHS IAPT</span>
+        <span class="job-tag">Charities</span>
+        <span class="job-tag">Private Sector</span>
+      </div>
+      <div class="job-courses">
+        <div class="job-courses-label">Relevant Bundle Courses</div>
+        <div class="job-courses-list">Digital Tools for Mental Health · Video Consultation Skills · Safe Use of Patient Data · GDPR</div>
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-card-top">
+        <div class="job-icon">🏥</div>
+        <div class="job-salary-badge">£28,000 – £42,000</div>
+      </div>
+      <div class="job-title">Care Home Digital Lead / IT Champion</div>
+      <div class="job-desc">An emerging role in larger care organisations — responsible for rolling out digital tools, training staff on new systems, and ensuring the home is digitally compliant for CQC inspections.</div>
+      <div class="job-tags">
+        <span class="job-tag">Care Homes</span>
+        <span class="job-tag">Group Providers</span>
+        <span class="job-tag">Emerging Role</span>
+      </div>
+      <div class="job-courses">
+        <div class="job-courses-label">Relevant Bundle Courses</div>
+        <div class="job-courses-list">All 11 courses — this role requires the full digital skill set from the bundle</div>
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-card-top">
+        <div class="job-icon">📡</div>
+        <div class="job-salary-badge">£26,000 – £38,000</div>
+      </div>
+      <div class="job-title">Remote Monitoring & Telehealth Coordinator</div>
+      <div class="job-desc">Manages wearable and sensor-based monitoring systems for patients in care homes or at home. Interprets alerts, liaises with clinical teams, and ensures ethical use of monitoring technology.</div>
+      <div class="job-tags">
+        <span class="job-tag">NHS Community</span>
+        <span class="job-tag">Care Tech Firms</span>
+        <span class="job-tag">High Growth</span>
+      </div>
+      <div class="job-courses">
+        <div class="job-courses-label">Relevant Bundle Courses</div>
+        <div class="job-courses-list">Remote Monitoring Technology · Video Consultation Skills · Digital Literacy · Cyber Security</div>
+      </div>
+    </div>
+
+    <div class="job-card">
+      <div class="job-card-top">
+        <div class="job-icon">🛡️</div>
+        <div class="job-salary-badge">£35,000 – £55,000</div>
+      </div>
+      <div class="job-title">Cyber Security & IG Manager (NHS / Care)</div>
+      <div class="job-desc">Senior role managing information security policies, responding to cyber incidents, and leading staff awareness programmes across an NHS trust or large care group. High demand following major NHS cyber attacks.</div>
+      <div class="job-tags">
+        <span class="job-tag">NHS Band 7+</span>
+        <span class="job-tag">Senior Role</span>
+        <span class="job-tag">High Demand</span>
+      </div>
+      <div class="job-courses">
+        <div class="job-courses-label">Relevant Bundle Courses</div>
+        <div class="job-courses-list">Cyber Security Awareness · Phishing Awareness · GDPR · Safe Use of Patient Data</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="salary-disclaimer">
+    <strong>ℹ️ Salary Disclaimer:</strong> All salary figures are approximate ranges sourced from Indeed, Glassdoor, NHS Jobs, and Pin-Point Health & Social Care Salary Benchmarking (2026). Actual salaries vary by employer, location, experience, and qualifications. Completing this bundle supports career progression but does not guarantee employment or a specific salary level.
+  </div>
+</section>
+
+
+<!-- CUSTOM BUNDLE BUILDER -->
+<section class="section custom-section" id="custom">
+  <div class="custom-intro">
+    <div class="custom-info">
+      <div class="section-tag">Build Your Own</div>
+      <h2 class="section-title">Only Need<br>Certain Courses?<br>Build Your Bundle.</h2>
+      <p class="section-sub">Not every learner needs all 11 courses. Pick exactly what you need and pay only for those — with an automatic discount applied when you select 3 or more courses.</p>
+      <div class="custom-perks">
+        <div class="custom-perk">
+          <div class="perk-icon">🎯</div>
+          <div class="perk-text">
+            <h4>Pick Any Combination</h4>
+            <p>Choose 1 or more courses from the full bundle. No minimum order — total flexibility for individual learners.</p>
+          </div>
+        </div>
+        <div class="custom-perk">
+          <div class="perk-icon">💰</div>
+          <div class="perk-text">
+            <h4>Automatic Discounts</h4>
+            <p>Select 3–5 courses and save 10%. Select 6–10 courses and save 20%. Select all 11 and save 33% with the full bundle.</p>
+          </div>
+        </div>
+        <div class="custom-perk">
+          <div class="perk-icon">🏢</div>
+          <div class="perk-text">
+            <h4>Perfect for Employers</h4>
+            <p>Only need GDPR and Cyber Security for your admin team? Or eMAR for your clinical staff? Build exactly what each team needs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="custom-builder">
+      <div class="builder-header">
+        <h3>Select Your Courses</h3>
+        <div class="builder-counter" id="counter">0 selected</div>
+      </div>
+
+      <div class="course-picker" id="coursePicker">
+        <div class="picker-item" data-price="12" onclick="toggleCourse(this)">
+          <div class="picker-checkbox"></div>
+          <div class="picker-name">🔐 Cyber Security Awareness for Care Staff</div>
+          <div class="picker-price">£12</div>
+        </div>
+        <div class="picker-item" data-price="12" onclick="toggleCourse(this)">
+          <div class="picker-checkbox"></div>
+          <div class="picker-name">📋 GDPR & Data Protection in Health and Social Care</div>
+          <div class="picker-price">£12</div>
+        </div>
+        <div class="picker-item" data-price="10" onclick="toggleCourse(this)">
+          <div class="picker-checkbox"></div>
+          <div class="picker-name">🔒 Safe Use of Patient Data & Confidentiality</div>
+          <div class="picker-price">£10</div>
+        </div>
+        <div class="picker-item" data-price="10" onclick="toggleCourse(this)">
+          <div class="picker-checkbox"></div>
+          <div class="picker-name">🎣 Phishing & Social Engineering Awareness</div>
+          <div class="picker-price">£10</div>
+        </div>
+        <div class="picker-item" data-price="9" onclick="toggleCourse(this)">
+          <div class="picker-checkbox"></div>
+          <div class="picker-name">💻 Digital Literacy for Care Workers (Beginner)</div>
+          <div class="picker-price">£9</div>
+        </div>
+        <div class="picker-item" data-price="14" onclick="toggleCourse(this)">
+          <div class="picker-checkbox"></div>
+          <div class="picker-name">💊 eMAR Training</div>
+          <div class="picker-price">£14</div>
+        </div>
+        <div class="picker-item" data-price="10" onclick="toggleCourse(this)">
+          <div class="picker-checkbox"></div>
+          <div class="picker-name">🎥 Video Consultation Skills for Healthcare Staff</div>
+          <div class="picker-price">£10</div>
+        </div>
+        <div class="picker-item" data-price="10" onclick="toggleCourse(this)">
+          <div class="picker-checkbox"></div>
+          <div class="picker-name">📡 Remote Monitoring Technology in Care</div>
+          <div class="picker-price">£10</div>
+        </div>
+        <div class="picker-item" data-price="9" onclick="toggleCourse(this)">
+          <div class="picker-checkbox"></div>
+          <div class="picker-name">📊 Using Spreadsheets for Care Managers</div>
+          <div class="picker-price">£9</div>
+        </div>
+        <div class="picker-item" data-price="12" onclick="toggleCourse(this)">
+          <div class="picker-checkbox"></div>
+          <div class="picker-name">🤖 Introduction to AI Tools for Healthcare Administrators</div>
+          <div class="picker-price">£12</div>
+        </div>
+        <div class="picker-item" data-price="10" onclick="toggleCourse(this)">
+          <div class="picker-checkbox"></div>
+          <div class="picker-name">🧠 Digital Tools for Mental Health Practitioners</div>
+          <div class="picker-price">£10</div>
+        </div>
+      </div>
+
+      <div class="builder-summary">
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="subtotal">£0.00</span>
+        </div>
+        <div class="summary-row" id="discountRow" style="display:none;">
+          <span id="discountLabel">Discount</span>
+          <span class="saving" id="discountAmount">-£0.00</span>
+        </div>
+        <div class="summary-row total">
+          <span>Total</span>
+          <span id="totalPrice">£0.00</span>
+        </div>
+      </div>
+
+      <button class="builder-cta" id="builderCta" disabled>Select at least 1 course to continue</button>
+      <div class="builder-note" id="builderNote">💡 Select 3+ courses for 10% off · 6+ courses for 20% off · All 11 for 33% off</div>
+    </div>
+  </div>
+</section>
+
+<!-- STUDENT ADVISOR -->
+<section class="advisor-section" id="advisor">
+  <div class="advisor-grid">
+    <div class="advisor-left">
+      <div class="section-tag">Free Guidance</div>
+      <h2 class="section-title">Not Sure Which<br>Courses Are Right<br>For You?</h2>
+      <p class="section-sub">Our student advisors are here to help — whether you're an individual learner, a care home manager, or an HR lead buying for a large team. Get personalised course recommendations with no obligation.</p>
+      <div class="advisor-features">
+        <div class="advisor-feature">Free 1-to-1 course guidance session</div>
+        <div class="advisor-feature">Help choosing the right bundle or custom combination</div>
+        <div class="advisor-feature">Advice on team and organisational licences</div>
+        <div class="advisor-feature">CQC inspection readiness checklist included</div>
+        <div class="advisor-feature">Response within 1 working day</div>
+      </div>
+      <div class="advisor-avatars">
+        <div class="avatar-stack">
+          <div class="avatar">👩</div>
+          <div class="avatar">👨</div>
+          <div class="avatar">👩</div>
+        </div>
+        <div class="avatar-text">
+          <strong>Our Student Advisors</strong>
+          Available Mon–Fri, 9am–5pm UK time
+        </div>
+      </div>
+    </div>
+
+    <div class="advisor-form">
+      <div id="formContent">
+        <div class="form-title">Talk to a Student Advisor</div>
+        <div class="form-subtitle">Fill in the form below and we'll get back to you within 1 working day with personalised recommendations.</div>
+
+        <div class="form-group">
+          <label>Full Name *</label>
+          <input type="text" id="fullName" placeholder="e.g. Sarah Johnson">
+        </div>
+
+        <div class="form-group">
+          <label>Email Address *</label>
+          <input type="email" id="emailAddr" placeholder="e.g. sarah@carehome.co.uk">
+        </div>
+
+        <div class="form-group">
+          <label>Phone Number *</label>
+          <input type="tel" id="phoneNumber" placeholder="e.g. 07700 900000">
+        </div>
+
+        <div class="form-group">
+          <label>Your Question or Message</label>
+          <textarea id="message" placeholder="e.g. I manage a care home of 20 staff and need GDPR and cyber security training — which option is best for us?"></textarea>
+        </div>
+
+        <button class="form-submit" onclick="submitAdvisorForm()">Send My Enquiry →</button>
+        <div class="form-privacy">🔒 Your details are kept private and never shared with third parties. UK GDPR compliant.</div>
+      </div>
+
+      <div class="form-success" id="formSuccess">
+        <div class="success-icon">✅</div>
+        <h4>Enquiry Received!</h4>
+        <p>Thank you for getting in touch. One of our student advisors will reply to your email within 1 working day with personalised recommendations.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // ── COURSE BUILDER ──
+  function toggleCourse(el) {
+    el.classList.toggle('selected');
+    updateSummary();
+  }
+
+  function updateSummary() {
+    const selected = document.querySelectorAll('.picker-item.selected');
+    const count = selected.length;
+    let subtotal = 0;
+    selected.forEach(el => { subtotal += parseFloat(el.dataset.price); });
+
+    // Discount logic
+    let discountPct = 0;
+    let discountLabel = '';
+    if (count === 11) { discountPct = 33; discountLabel = '33% bundle discount'; }
+    else if (count >= 6) { discountPct = 20; discountLabel = '20% multi-course discount'; }
+    else if (count >= 3) { discountPct = 10; discountLabel = '10% multi-course discount'; }
+
+    const discountAmt = subtotal * (discountPct / 100);
+    const total = subtotal - discountAmt;
+
+    // Update counter
+    const counter = document.getElementById('counter');
+    counter.textContent = count === 0 ? '0 selected' : `${count} course${count > 1 ? 's' : ''} selected`;
+    counter.style.background = count > 0 ? 'var(--teal)' : 'var(--text-light)';
+
+    // Update summary
+    document.getElementById('subtotal').textContent = '£' + subtotal.toFixed(2);
+    document.getElementById('totalPrice').textContent = count > 0 ? '£' + total.toFixed(2) : '£0.00';
+
+    const discountRow = document.getElementById('discountRow');
+    if (discountPct > 0) {
+      discountRow.style.display = 'flex';
+      document.getElementById('discountLabel').textContent = discountLabel;
+      document.getElementById('discountAmount').textContent = '-£' + discountAmt.toFixed(2);
+    } else {
+      discountRow.style.display = 'none';
+    }
+
+    // Update CTA button
+    const cta = document.getElementById('builderCta');
+    const note = document.getElementById('builderNote');
+    if (count === 0) {
+      cta.disabled = true;
+      cta.textContent = 'Select at least 1 course to continue';
+      note.textContent = '💡 Select 3+ courses for 10% off · 6+ courses for 20% off · All 11 for 33% off';
+    } else if (count === 11) {
+      cta.disabled = false;
+      cta.textContent = `Enrol in Full Bundle — £${total.toFixed(2)} (33% saved!)`;
+      note.textContent = '🎉 You have selected all 11 courses — maximum saving applied!';
+    } else {
+      cta.disabled = false;
+      const saving = discountPct > 0 ? ` (${discountPct}% off)` : '';
+      cta.textContent = `Enrol in ${count} Course${count > 1 ? 's' : ''} — £${total.toFixed(2)}${saving}`;
+      if (count < 3) note.textContent = `💡 Add ${3 - count} more course${3 - count > 1 ? 's' : ''} to unlock 10% discount`;
+      else if (count < 6) note.textContent = `💡 Add ${6 - count} more course${6 - count > 1 ? 's' : ''} to unlock 20% discount`;
+      else note.textContent = `💡 Add ${11 - count} more course${11 - count > 1 ? 's' : ''} to get the full bundle at 33% off`;
+    }
+  }
+
+  // ── ADVISOR FORM ──
+  function submitAdvisorForm() {
+    const fullName = document.getElementById('fullName').value.trim();
+    const email = document.getElementById('emailAddr').value.trim();
+    const phone = document.getElementById('phoneNumber').value.trim();
+    if (!fullName || !email || !phone) {
+      alert('Please fill in your full name, email address, and phone number.');
+      return;
+    }
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+    document.getElementById('formContent').style.display = 'none';
+    document.getElementById('formSuccess').style.display = 'block';
+  }
+</script>
+
+<!-- FAQ -->
+<section class="section faq-section" id="faq">
+  <div class="section-tag">Common Questions</div>
+  <h2 class="section-title">Frequently Asked Questions</h2>
+
+  <div class="faq-grid">
+    <div class="faq-item">
+      <h4>Are these courses CPD accredited?</h4>
+      <p>Yes. All 11 courses in the bundle are CPD accredited and comply with CQC and ICO requirements for health and social care training in the UK.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Will I receive a certificate?</h4>
+      <p>Yes. On successful completion of each course you'll receive an instant digital CPD certificate, downloadable as a PDF to add to your records or staff file.</p>
+    </div>
+    <div class="faq-item">
+      <h4>How long do I have access?</h4>
+      <p>You have 365 days of access from the date of purchase. All courses are self-paced — start and stop whenever suits you.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Can I access on mobile or tablet?</h4>
+      <p>Absolutely. All courses are fully responsive and work on any device — smartphone, tablet, laptop, or desktop. Learn anywhere, anytime.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Is there an assessment?</h4>
+      <p>Yes, each course ends with a short multiple-choice assessment. You can retake it unlimited times at no extra cost until you pass and receive your certificate.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Can my employer purchase for the whole team?</h4>
+      <p>Yes. We offer team licences (up to 10 staff) and unlimited organisational licences with a manager dashboard and bulk certificate downloads. See our pricing plans above.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Is this training CQC compliant?</h4>
+      <p>Yes. Course content is aligned with CQC Fundamental Standards, UK GDPR, the Data Protection Act 2018, and NHS Digital's data security guidance.</p>
+    </div>
+    <div class="faq-item">
+      <h4>Can I buy individual courses instead?</h4>
+      <p>Yes. Every course is available to purchase individually. The bundle simply gives you all 11 at a 33% saving compared to buying them separately.</p>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="cta-banner">
+  <h2>Ready to Upskill Your<br>Care Team Today?</h2>
+  <p>Join care workers, managers, and NHS professionals across the UK building digital confidence with CPD-accredited training.</p>
+  <div class="cta-btns">
+    <a href="#" class="btn-primary">Get the Full Bundle — £79</a>
+    <a href="#courses" class="btn-outline" style="color:rgba(255,255,255,0.7); border-color:rgba(255,255,255,0.25)">Browse All 11 Courses</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 DigitalCarePro · CPD Accredited Online Training for Health & Social Care · UK · <a href="#">Privacy Policy</a> · <a href="#">Terms</a> · <a href="#">Contact</a></p>
+</footer>
+
+</body>
+</html>
